@@ -902,18 +902,14 @@
               const tab = new bootstrap.Tab(tabLink);
               tab.show(); // Mostrar la pestaña
 
-              // Desplazar hacia la sección de las pestañas con ajuste fino
-              const tabSection = document.querySelector("#myTab"); // Selecciona la barra de pestañas
-
-              // Obtener la posición de la sección de pestañas y ajustar el scroll
-              const offsetTop =
-                tabSection.getBoundingClientRect().top + window.scrollY - 100; // Ajusta -100 para desplazar un poco más arriba
-
-              // Desplazar suavemente a la sección de las pestañas
-              window.scrollTo({
-                top: offsetTop,
-                behavior: "smooth",
-              });
+              // Retraso para permitir que la pestaña se muestre antes de hacer scroll
+              setTimeout(() => {
+                // Desplazar hacia el inicio de la página (para mostrar la sección hero y menú principal)
+                window.scrollTo({
+                  top: 0, // Desplazar hasta el inicio de la página
+                  behavior: "smooth", // Desplazamiento suave
+                });
+              }, 300); // Ajusta el tiempo de retraso según sea necesario (300ms funciona en la mayoría de los casos)
             }
           }
         }
