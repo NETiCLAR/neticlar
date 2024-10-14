@@ -1,237 +1,923 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>NETiCLAR - Detalles de Servicios de Limpieza</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
 
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Service Details - Squadfree Bootstrap Template</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
+    <!-- Favicons -->
+    <link href="assets/img/logos/edilsa-logo.png" rel="icon" />
+    <link href="assets/img/logos/edilsa-logo.png" rel="apple-touch-icon" />
 
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+    <link
+      href="assets/vendor/glightbox/css/glightbox.min.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Main CSS File -->
+    <link href="assets/css/main.css" rel="stylesheet" />
 
-  <!-- Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
-
-  <!-- =======================================================
+    <!-- =======================================================
   * Template Name: Squadfree
   * Template URL: https://bootstrapmade.com/squadfree-free-bootstrap-template-creative/
   * Updated: Aug 07 2024 with Bootstrap v5.3.3
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
-</head>
+  </head>
 
-<body class="service-details-page">
+  <body class="service-details-page">
+    <header id="header" class="header d-flex align-items-center fixed-top">
+      <div
+        class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between"
+      >
+        <!-- Logo -->
+        <a
+          href="javascript:void(0);"
+          class="logo d-flex align-items-center me-auto"
+          data-bs-toggle="modal"
+          data-bs-target="#logoModal"
+        >
+          <img
+            src="assets/img/logos/edilsa-logo.png"
+            alt="Logo Ampliado"
+            style="cursor: pointer"
+          />
+          <h1 class="sitename" style="text-transform: none">
+            NETiCLAR | Limpieza Profesional
+          </h1>
+        </a>
 
-  <header id="header" class="header d-flex align-items-center fixed-top">
-    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+        <!-- LOGO Orig
+        <a href="index.html" class="logo d-flex align-items-center">
+          Uncomment the line below if you also wish to use an image logo
+          <img src="assets/img/logo.png" alt="">
+          <h1 class="sitename">Squadfree</h1>
+        </a> -->
 
-      <a href="index.html" class="logo d-flex align-items-center">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.png" alt=""> -->
-        <h1 class="sitename">Squadfree</h1>
-      </a>
-
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="#hero">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#team">Team</a></li>
-          <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="#">Dropdown 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">Deep Dropdown 1</a></li>
-                  <li><a href="#">Deep Dropdown 2</a></li>
-                  <li><a href="#">Deep Dropdown 3</a></li>
-                  <li><a href="#">Deep Dropdown 4</a></li>
-                  <li><a href="#">Deep Dropdown 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Dropdown 2</a></li>
-              <li><a href="#">Dropdown 3</a></li>
-              <li><a href="#">Dropdown 4</a></li>
-            </ul>
-          </li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
-
-    </div>
-  </header>
-
-  <main class="main">
-
-    <!-- Page Title -->
-    <div class="page-title accent-background">
-      <div class="container position-relative">
-        <h1>Service Details</h1>
-        <p>Esse dolorum voluptatum ullam est sint nemo et est ipsa porro placeat quibusdam quia assumenda numquam molestias.</p>
-        <nav class="breadcrumbs">
-          <ol>
-            <li><a href="index.html">Home</a></li>
-            <li class="current">Service Details</li>
-          </ol>
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="index.html#hero" class="active">Inicio</a></li>
+            <li><a href="index.html#about">Acerca</a></li>
+            <li><a href="index.html#services">Servicios</a></li>
+            <li><a href="index.html#portfolio">Portafolio</a></li>
+            <li><a href="index.html#team">Equipo</a></li>
+            <li><a href="index.html#pricing">Precios</a></li>
+            <li><a href="index.html#faq">FAQs</a></li>
+            <li><a href="map.html">Mapa</a></li>
+            <li><a href="#contact">Contacto</a></li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
       </div>
-    </div><!-- End Page Title -->
+    </header>
 
-    <!-- Service Details Section -->
-    <section id="service-details" class="service-details section">
+    <!-- Modal for Enlarged Image -->
+    <div
+      class="modal fade"
+      id="logoModal"
+      tabindex="-1"
+      aria-labelledby="logoModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="logoModalLabel">
+              NETiCLAR | Limpieza Profesional
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body text-center">
+            <img
+              src="assets/img/logos/edilsa-logo.png"
+              alt="Logo Ampliado"
+              class="img-fluid"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
 
-      <div class="container">
+    <!-- Modal for Enlarged Image -->
+    <div
+      class="modal fade"
+      id="logoModal2"
+      tabindex="-1"
+      aria-labelledby="logoModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <a href="https://www.digitalizacionintegral.com/" target="_blank">
+              <h5 class="modal-title" id="logoModalLabel">
+                Digitalización Integral<br />Kit Digital | Tarragona
+              </h5>
+            </a>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body text-center">
+            <a href="https://www.digitalizacionintegral.com/" target="_blank">
+              <img
+                src="assets/img/logos/di-logo.png"
+                alt="Logo Ampliado"
+                class="img-fluid"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
 
-        <div class="row gy-4">
+    <main class="main">
+      <section id="hero-services" class="hero-services dark-background">
+        <img
+          src="assets/img/bgs/hero-bg3.jpg"
+          alt=""
+          data-aos="fade-in"
+          class=""
+        />
 
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-            <div class="services-list">
-              <a href="#" class="active">Web Design</a>
-              <a href="#">Software Development</a>
-              <a href="#">Product Management</a>
-              <a href="#">Graphic Design</a>
-              <a href="#">Marketing</a>
+        <!-- Page Title -->
+        <div class="container">
+          <div class="row justify-content-center" data-aos="zoom-out">
+            <div class="col-xl-7 col-lg-9 text-center">
+              <h1>Detalles de todos los Servicios de Limpieza</h1>
+              <a href="#service-details" class="btn-scroll" title="Scroll Down"
+                ><i class="bi bi-chevron-down"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <!-- End Page Title -->
+      </section>
+
+      <!-- Service Details Section -->
+      <main class="main bg-light p-4 rounded shadow-sm">
+        <div class="container mt-3">
+          <div class="row">
+            <div class="col-lg-10 col-md-8 col-sm-12 mx-auto">
+              <!-- Título de la sección -->
+              <!--<h2 class="text-center">Nuestros Servicios de Limpieza</h2>
+              <br />-->
+              <div class="card">
+                <div class="card-body">
+                  <!-- Navegación de Pestañas -->
+                  <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                      <button
+                        class="nav-link active"
+                        id="hogar-tab"
+                        data-bs-toggle="tab"
+                        data-bs-target="#hogar"
+                        type="button"
+                        role="tab"
+                        aria-controls="hogar"
+                        aria-selected="true"
+                      >
+                        Hogares
+                      </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button
+                        class="nav-link text-muted"
+                        id="comercial-tab"
+                        data-bs-toggle="tab"
+                        data-bs-target="#comercial"
+                        type="button"
+                        role="tab"
+                        aria-controls="comercial"
+                        aria-selected="false"
+                      >
+                        Comercios
+                      </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button
+                        class="nav-link text-muted"
+                        id="industrial-tab"
+                        data-bs-toggle="tab"
+                        data-bs-target="#industrial"
+                        type="button"
+                        role="tab"
+                        aria-controls="industrial"
+                        aria-selected="false"
+                      >
+                        Industrias
+                      </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button
+                        class="nav-link text-muted"
+                        id="institucional-tab"
+                        data-bs-toggle="tab"
+                        data-bs-target="#institucional"
+                        type="button"
+                        role="tab"
+                        aria-controls="institucional"
+                        aria-selected="false"
+                      >
+                        Instituciones
+                      </button>
+                    </li>
+                  </ul>
+
+                  <!-- Contenido de las Pestañas -->
+                  <div class="tab-content mt-4" id="myTabContent">
+                    <div
+                      class="tab-pane fade show active"
+                      id="hogar"
+                      role="tabpanel"
+                      aria-labelledby="hogar-tab"
+                    >
+                      <h3>Servicio de Limpieza de Hogares</h3>
+                      <br />
+                      <div class="container">
+                        <div class="row">
+                          <!-- Columna para ajustar la imagen -->
+                          <div class="col-lg-12 col-md-8 col-sm-12">
+                            <img
+                              src="assets/img/bgs/hero-bg3.jpg"
+                              alt="Imagen de fondo"
+                              class="img-fluid rounded shadow"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <br />
+                      <p>
+                        Este servicio está diseñado para garantizar un ambiente
+                        limpio, ordenado y seguro en los espacios residenciales.
+                        La limpieza del hogar incluye tareas rutinarias y
+                        profundas, adaptadas a las necesidades individuales de
+                        cada cliente. Los servicios suelen abarcar:
+                      </p>
+                      <i class="bi bi-check-circle"></i>
+                      <span
+                        ><strong><i>Limpieza de superficies: </i></strong
+                        >Limpiar y desinfectar encimeras, mesas, estanterías,
+                        ventanas y otras áreas expuestas al uso diario.</span
+                      >
+                      <br /><br />
+                      <i class="bi bi-check-circle"></i>
+                      <span
+                        ><strong><i>Aspirado y fregado:</i></strong> Aspirado de
+                        alfombras, moquetas y fregado de suelos duros como
+                        baldosas o madera.</span
+                      >
+                      <br /><br />
+                      <i class="bi bi-check-circle"></i>
+                      <span
+                        ><strong><i>Baños y cocinas:</i></strong> Desinfección
+                        completa de baños y cocinas, incluidos inodoros,
+                        fregaderos, electrodomésticos y azulejos.</span
+                      >
+                      <br /><br />
+                      <i class="bi bi-check-circle"></i>
+                      <span
+                        ><strong><i>Habitaciones:</i></strong> Orden y limpieza
+                        de dormitorios, salas de estar y otras áreas
+                        comunes.</span
+                      >
+                      <br /><br />
+                      <i class="bi bi-check-circle"></i>
+                      <span
+                        ><strong
+                          ><i>Limpieza profunda (si se requiere):</i></strong
+                        >
+                        Incluye limpieza de rincones difíciles de alcanzar,
+                        detrás de muebles, dentro de armarios, y tareas
+                        adicionales como limpieza de alfombras o lavado de
+                        cortinas.</span
+                      >
+                      <p>
+                        <br />
+                        Ideal para quienes desean mantener sus hogares
+                        impecables y libres de alérgenos, bacterias y polvo.
+                      </p>
+                    </div>
+                    <div
+                      class="tab-pane fade"
+                      id="comercial"
+                      role="tabpanel"
+                      aria-labelledby="comercial-tab"
+                    >
+                      <h3>Servicio de Limpieza en Áreas Comerciales</h3>
+                      <br />
+                      <div class="container">
+                        <div class="row">
+                          <!-- Columna para ajustar la imagen -->
+                          <div class="col-lg-12 col-md-8 col-sm-12">
+                            <img
+                              src="assets/img/portfolio/comercial-1.jpg"
+                              alt="Imagen de fondo"
+                              class="img-fluid rounded shadow"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <br />
+                      <p>
+                        Este servicio está orientado a empresas y negocios que
+                        necesitan mantener un ambiente de trabajo profesional y
+                        presentable para empleados y clientes. La limpieza
+                        comercial es adaptable al tipo de negocio (oficinas,
+                        tiendas, restaurantes, etc.) y generalmente incluye:
+                      </p>
+                      <i class="bi bi-check-circle"></i>
+                      <span
+                        ><strong><i>Limpieza de oficinas:</i></strong>
+                        Escritorios, salas de reuniones, espacios de descanso, y
+                        áreas de recepción. Incluye limpieza de equipos
+                        electrónicos como ordenadores y teléfonos.</span
+                      >
+                      <br /><br />
+                      <i class="bi bi-check-circle"></i>
+                      <span
+                        ><strong><i>Zonas comunes:</i></strong> Pasillos,
+                        escaleras, vestíbulos y entradas principales.</span
+                      >
+                      <br /><br />
+                      <i class="bi bi-check-circle"></i>
+                      <span
+                        ><strong><i>Baños y cocinas:</i></strong> Limpieza y
+                        desinfección frecuente de los baños de la empresa y
+                        áreas de cocina o comedor para garantizar un ambiente
+                        higiénico.</span
+                      >
+                      <br /><br />
+                      <i class="bi bi-check-circle"></i>
+                      <span
+                        ><strong><i>Mantenimiento de pisos:</i></strong>
+                        Fregado, pulido o aspirado de suelos según el tipo de
+                        material (moqueta, baldosas, madera, etc.)..</span
+                      >
+                      <br /><br />
+                      <i class="bi bi-check-circle"></i>
+                      <span
+                        ><strong><i>Gestión de residuos:</i></strong>
+                        Recolección y disposición de la basura, reciclaje, y
+                        reposición de papeleras y contenedores.</span
+                      >
+                      <p>
+                        <br />
+                        Este tipo de limpieza es clave para mantener la
+                        productividad, asegurar un entorno saludable y causar
+                        una buena impresión en los clientes.
+                      </p>
+                    </div>
+                    <div
+                      class="tab-pane fade"
+                      id="industrial"
+                      role="tabpanel"
+                      aria-labelledby="industrial-tab"
+                    >
+                      <h3>Servicio de Limpieza de Áreas Industriales</h3>
+                      <br />
+                      <div class="container">
+                        <div class="row">
+                          <!-- Columna para ajustar la imagen -->
+                          <div class="col-lg-12 col-md-8 col-sm-12">
+                            <img
+                              src="assets/img/portfolio/industrial-2.jpg"
+                              alt="Imagen de fondo"
+                              class="img-fluid rounded shadow"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <br />
+                      <p>
+                        Este tipo de limpieza está específicamente diseñado para
+                        fábricas, almacenes, plantas de producción, y otros
+                        entornos industriales. Dado que estos lugares suelen
+                        estar sujetos a mayor suciedad y residuos peligrosos, la
+                        limpieza industrial es más exigente y se centra en la
+                        seguridad y la eficiencia. Los servicios incluyen:
+                      </p>
+                      <i class="bi bi-check-circle"></i>
+                      <span
+                        ><strong
+                          ><i>Limpieza de maquinaria y equipos: </i></strong
+                        >
+                        Eliminación de polvo, residuos, grasa y aceites de las
+                        máquinas para garantizar su funcionamiento adecuado y
+                        evitar accidentes.</span
+                      >
+                      <br /><br />
+                      <i class="bi bi-check-circle"></i>
+                      <span
+                        ><strong
+                          ><i>Limpieza de suelos industriales: </i></strong
+                        >
+                        Incluye la eliminación de derrames peligrosos, grasas o
+                        productos químicos con métodos especializados (fregado
+                        industrial, chorro de agua a presión, etc.).</span
+                      >
+                      <br /><br />
+                      <i class="bi bi-check-circle"></i>
+                      <span
+                        ><strong
+                          ><i>Limpieza de áreas de almacenamiento: </i></strong
+                        >
+                        Mantenimiento de almacenes limpios y ordenados para
+                        evitar accidentes y asegurar la correcta gestión de
+                        inventarios.</span
+                      >
+                      <br /><br />
+                      <i class="bi bi-check-circle"></i>
+                      <span
+                        ><strong
+                          ><i>Tratamiento de residuos peligrosos: </i></strong
+                        >
+                        Eliminación segura de residuos industriales o químicos,
+                        cumpliendo con las normativas ambientales.</span
+                      >
+                      <br /><br />
+                      <i class="bi bi-check-circle"></i>
+                      <span
+                        ><strong><i>Limpieza de áreas específicas: </i></strong>
+                        Como plantas de procesamiento, áreas de carga y
+                        descarga, o instalaciones de mantenimiento.</span
+                      >
+                      <p>
+                        <br />
+                        La limpieza industrial es esencial para garantizar la
+                        seguridad en el lugar de trabajo y mantener un entorno
+                        eficiente y productivo.
+                      </p>
+                    </div>
+                    <div
+                      class="tab-pane fade"
+                      id="institucional"
+                      role="tabpanel"
+                      aria-labelledby="institucional-tab"
+                    >
+                      <h3>Servicio de Limpieza Institucional</h3>
+                      <br />
+                      <div class="container">
+                        <div class="row">
+                          <!-- Columna para ajustar la imagen -->
+                          <div class="col-lg-12 col-md-8 col-sm-12">
+                            <img
+                              src="assets/img/portfolio/institucional-1.jpg"
+                              alt="Imagen de fondo"
+                              class="img-fluid rounded shadow"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <br />
+                      <p>
+                        La limpieza institucional está orientada a instituciones
+                        públicas y privadas como hospitales, escuelas,
+                        universidades, edificios gubernamentales y otros
+                        organismos. Debido a la naturaleza de estos lugares, la
+                        limpieza institucional requiere altos estándares de
+                        higiene, seguridad y salud. Este servicio incluye:
+                      </p>
+                      <i class="bi bi-check-circle"></i>
+                      <span
+                        ><strong
+                          ><i
+                            >Limpieza y desinfección de áreas de alto tráfico:
+                          </i></strong
+                        >
+                        Como pasillos, áreas de espera, recepciones,
+                        bibliotecas, y salas de reuniones.</span
+                      >
+                      <br /><br />
+                      <i class="bi bi-check-circle"></i>
+                      <span
+                        ><strong><i>Baños y áreas comunes: </i></strong> Incluye
+                        Desinfección frecuente de baños públicos, comedores y
+                        cafeterías, asegurando que estén siempre higiénicos y
+                        libres de patógenos.</span
+                      >
+                      <br /><br />
+                      <i class="bi bi-check-circle"></i>
+                      <span
+                        ><strong><i>Aulas y oficinas: </i></strong> Limpieza de
+                        escritorios, pizarras, ventanas, y áreas de trabajo,
+                        garantizando que los entornos de estudio y trabajo sean
+                        cómodos y saludables.</span
+                      >
+                      <br /><br />
+                      <i class="bi bi-check-circle"></i>
+                      <span
+                        ><strong
+                          ><i>Zonas médicas y clínicas (si aplica): </i></strong
+                        >
+                        En hospitales y centros de salud, la limpieza y
+                        desinfección rigurosa de quirófanos, salas de examen, y
+                        áreas de tratamiento es esencial para prevenir la
+                        propagación de infecciones.</span
+                      >
+                      <br /><br />
+                      <i class="bi bi-check-circle"></i>
+                      <span
+                        ><strong><i>Mantenimiento de exteriores: </i></strong>
+                        Limpieza de las áreas exteriores de la institución,
+                        incluidas aceras, entradas y áreas de
+                        estacionamiento.</span
+                      >
+                      <p>
+                        <br />
+                        Este tipo de limpieza ayuda a mantener la salubridad y
+                        seguridad en entornos de gran afluencia de personas, y a
+                        cumplir con las normativas de higiene y seguridad.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <script>
+          // Detecta el cambio de pestañas y ajusta las clases de color
+          document.querySelectorAll(".nav-link").forEach(function (tab) {
+            tab.addEventListener("show.bs.tab", function (event) {
+              // Elimina el color gris (text-muted) de la pestaña activa
+              document.querySelectorAll(".nav-link").forEach(function (link) {
+                link.classList.add("text-muted"); // Aplica el color gris a todas las pestañas
+              });
+              event.target.classList.remove("text-muted"); // Quita el gris de la pestaña activa
+            });
+          });
+        </script>
+
+        <br />
+
+        <!-- /Service Details Section -->
+      </main>
+
+      <!-- Contact Section -->
+      <section id="contact" class="contact section">
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+          <h2>Contacto</h2>
+          <p>
+            En NETiCLAR, estamos aquí para ayudarte con cualquier consulta o
+            solicitud de nuestros servicios de limpieza. No dudes en ponerte en
+            contacto con nosotros para recibir más información, solicitar un
+            presupuesto personalizado o agendar una cita. ¡Nuestro equipo estará
+            encantado de atenderte!
+          </p>
+        </div>
+        <!-- End Section Title -->
+
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+          <div class="row gy-4">
+            <div class="col-lg-5">
+              <div class="info-wrap">
+                <div
+                  class="info-item d-flex"
+                  data-aos="fade-up"
+                  data-aos-delay="200"
+                >
+                  <i class="bi bi-geo-alt flex-shrink-0"></i>
+                  <div>
+                    <h3>Dirección</h3>
+                    <p>Carrer de la Pau, 15, 43001 Tarragona, España</p>
+                  </div>
+                </div>
+                <!-- End Info Item -->
+
+                <div
+                  class="info-item d-flex"
+                  data-aos="fade-up"
+                  data-aos-delay="300"
+                >
+                  <i class="bi bi-telephone flex-shrink-0"></i>
+                  <div>
+                    <h3>Teléfonos</h3>
+                    <p>+34 977 123 456 / +34 612 345 678</p>
+                  </div>
+                </div>
+                <!-- End Info Item -->
+
+                <div
+                  class="info-item d-flex"
+                  data-aos="fade-up"
+                  data-aos-delay="400"
+                >
+                  <i class="bi bi-envelope flex-shrink-0"></i>
+                  <div>
+                    <h3>Correo</h3>
+                    <p>info@example.com</p>
+                  </div>
+                </div>
+                <!-- End Info Item -->
+
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.5525553806783!2d1.2413919760278774!3d41.11774537258233!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a15a0ae24b81d5%3A0xb62a7e2bb3ebec1e!2sCarrer%20de%20la%20Pau%2C%2015%2C%2043001%20Tarragona%2C%20Espa%C3%B1a!5e0!3m2!1ses!2ses!4v1696267345152!5m2!1ses!2ses"
+                  frameborder="0"
+                  style="border: 2px solid #67b0d1; width: 100%; height: 270px"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
             </div>
 
-            <h4>Enim qui eos rerum in delectus</h4>
-            <p>Nam voluptatem quasi numquam quas fugiat ex temporibus quo est. Quia aut quam quod facere ut non occaecati ut aut. Nesciunt mollitia illum tempore corrupti sed eum reiciendis. Maxime modi rerum.</p>
+            <div class="col-lg-7">
+              <form
+                action="forms/contact.php"
+                method="post"
+                class="php-email-form"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
+                <div class="row gy-4">
+                  <div class="col-md-6">
+                    <label for="name-field" class="pb-2">Nombre:</label>
+                    <input
+                      type="text"
+                      name="name"
+                      id="name-field"
+                      class="form-control"
+                      required=""
+                    />
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="email-field" class="pb-2">Email:</label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      name="email"
+                      id="email-field"
+                      required=""
+                    />
+                  </div>
+
+                  <div class="col-md-12">
+                    <label for="subject-field" class="pb-2">Asunto:</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="subject"
+                      id="subject-field"
+                      required=""
+                    />
+                  </div>
+
+                  <div class="col-md-12">
+                    <label for="message-field" class="pb-2">Mensaje:</label>
+                    <textarea
+                      class="form-control"
+                      name="message"
+                      rows="10"
+                      id="message-field"
+                      required=""
+                    ></textarea>
+                  </div>
+
+                  <div class="col-md-12 text-center">
+                    <div class="loading">Cargando</div>
+                    <div class="error-message"></div>
+                    <div class="sent-message">
+                      Su mensaje ha sido enviado. Gracias!
+                    </div>
+
+                    <button type="submit">Enviar Mensaje</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <!-- End Contact Form -->
+          </div>
+        </div>
+      </section>
+      <!-- /Contact Section -->
+    </main>
+
+    <footer id="footer" class="footer dark-background">
+      <div class="container footer-top">
+        <div class="row gy-4">
+          <div class="col-lg-4 col-md-6 footer-about">
+            <a href="index.html" class="logo d-flex align-items-center">
+              <span class="sitename">NETiCLAR</span>
+            </a>
+            <div class="footer-contact pt-3">
+              <p>Carrer de la Pau, 15, 43001</p>
+              <p>Tarragona, España</p>
+              <p class="mt-3">
+                <strong>Teléfonos:</strong>
+                <span>+34 977 123 456 / +34 612 345 678</span>
+              </p>
+              <p><strong>Email:</strong> <span>info@neticlar.com</span></p>
+            </div>
+            <div class="social-links d-flex mt-4">
+              <a href=""><i class="bi bi-twitter-x"></i></a>
+              <a href=""><i class="bi bi-facebook"></i></a>
+              <a href=""><i class="bi bi-instagram"></i></a>
+              <a href=""><i class="bi bi-linkedin"></i></a>
+            </div>
           </div>
 
-          <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
-            <img src="assets/img/services.jpg" alt="" class="img-fluid services-img">
-            <h3>Temporibus et in vero dicta aut eius lidero plastis trand lined voluptas dolorem ut voluptas</h3>
-            <p>
-              Blanditiis voluptate odit ex error ea sed officiis deserunt. Cupiditate non consequatur et doloremque consequuntur. Accusantium labore reprehenderit error temporibus saepe perferendis fuga doloribus vero. Qui omnis quo sit. Dolorem architecto eum et quos deleniti officia qui.
-            </p>
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4>Enlaces Útiles</h4>
             <ul>
-              <li><i class="bi bi-check-circle"></i> <span>Aut eum totam accusantium voluptatem.</span></li>
-              <li><i class="bi bi-check-circle"></i> <span>Assumenda et porro nisi nihil nesciunt voluptatibus.</span></li>
-              <li><i class="bi bi-check-circle"></i> <span>Ullamco laboris nisi ut aliquip ex ea</span></li>
+              <li><a href="index.html#home">Inicio</a></li>
+              <li><a href="index.html#about">Acerca</a></li>
+              <li><a href="index.html#services">Servicios</a></li>
+              <li><a href="index.html#portfolio">Portafolio</a></li>
+              <li><a href="index.html#team">Equipo</a></li>
+              <li><a href="index.html#pricing">Precios</a></li>
+              <li><a href="index.html#faq">FAQs</a></li>
             </ul>
-            <p>
-              Est reprehenderit voluptatem necessitatibus asperiores neque sed ea illo. Deleniti quam sequi optio iste veniam repellat odit. Aut pariatur itaque nesciunt fuga.
-            </p>
-            <p>
-              Sunt rem odit accusantium omnis perspiciatis officia. Laboriosam aut consequuntur recusandae mollitia doloremque est architecto cupiditate ullam. Quia est ut occaecati fuga. Distinctio ex repellendus eveniet velit sint quia sapiente cumque. Et ipsa perferendis ut nihil. Laboriosam vel voluptates tenetur nostrum. Eaque iusto cupiditate et totam et quia dolorum in. Sunt molestiae ipsum at consequatur vero. Architecto ut pariatur autem ad non cumque nesciunt qui maxime. Sunt eum quia impedit dolore alias explicabo ea.
-            </p>
           </div>
 
-        </div>
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4>Nuestros Servicios</h4>
+            <ul>
+              <li><a href="#hogar">Hogar</a></li>
+              <li><a href="#comercial">Comercial</a></li>
+              <li><a href="#industrial">Industrias</a></li>
+              <li><a href="#institucional">Instituciones</a></li>
+            </ul>
+          </div>
 
+          <div class="col-lg-4 col-md-12 footer-newsletter">
+            <h4>Nuestro Boletín</h4>
+            <p>
+              Suscríbete a nuesto Boletín y recibe las últimas noticias sobre
+              nuestros productos y servicios!
+            </p>
+            <form
+              action="forms/newsletter.php"
+              method="post"
+              class="php-email-form"
+            >
+              <div class="newsletter-form">
+                <input type="email" name="email" /><input
+                  type="submit"
+                  value="Subscríbete"
+                />
+              </div>
+              <div class="loading">Cargando</div>
+              <div class="error-message"></div>
+              <div class="sent-message">
+                Su solicitud de suscripción ha sido enviada. Gracias!
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
 
-    </section><!-- /Service Details Section -->
-
-  </main>
-
-  <footer id="footer" class="footer dark-background">
-
-    <div class="container footer-top">
-      <div class="row gy-4">
-        <div class="col-lg-4 col-md-6 footer-about">
-          <a href="index.html" class="logo d-flex align-items-center">
-            <span class="sitename">Squadfree</span>
+      <div class="container copyright text-center mt-4">
+        <p>
+          © <span>2024 Copyright</span>
+          <strong class="px-1 sitename">NETiCLAR</strong>
+          <span>Todos los Derechos Reservados</span>
+        </p>
+        <div class="credits">
+          <!-- All the links in the footer should remain intact. -->
+          <!-- You can delete the links only if you've purchased the pro version. -->
+          <!-- Licensing information: https://bootstrapmade.com/license/ -->
+          <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+          Diseñado por
+          <a href="https://www.digitalizacionintegral.com/"
+            >Digitalización Integral</a
+          >
+        </div>
+        <br />
+        <!-- Logo -->
+        <div class="d-flex justify-content-center align-items-center">
+          <a
+            href="javascript:void(0);"
+            class="logo"
+            data-bs-toggle="modal"
+            data-bs-target="#logoModal2"
+          >
+            <img
+              src="assets/img/logos/di-logo.png"
+              class="img-fluid"
+              alt="Logo Ampliado"
+              style="cursor: pointer"
+              width="20%"
+              height="auto"
+            />
           </a>
-          <div class="footer-contact pt-3">
-            <p>A108 Adam Street</p>
-            <p>New York, NY 535022</p>
-            <p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
-            <p><strong>Email:</strong> <span>info@example.com</span></p>
-          </div>
-          <div class="social-links d-flex mt-4">
-            <a href=""><i class="bi bi-twitter-x"></i></a>
-            <a href=""><i class="bi bi-facebook"></i></a>
-            <a href=""><i class="bi bi-instagram"></i></a>
-            <a href=""><i class="bi bi-linkedin"></i></a>
-          </div>
         </div>
-
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Useful Links</h4>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Terms of service</a></li>
-            <li><a href="#">Privacy policy</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Our Services</h4>
-          <ul>
-            <li><a href="#">Web Design</a></li>
-            <li><a href="#">Web Development</a></li>
-            <li><a href="#">Product Management</a></li>
-            <li><a href="#">Marketing</a></li>
-            <li><a href="#">Graphic Design</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-4 col-md-12 footer-newsletter">
-          <h4>Our Newsletter</h4>
-          <p>Subscribe to our newsletter and receive the latest news about our products and services!</p>
-          <form action="forms/newsletter.php" method="post" class="php-email-form">
-            <div class="newsletter-form"><input type="email" name="email"><input type="submit" value="Subscribe"></div>
-            <div class="loading">Loading</div>
-            <div class="error-message"></div>
-            <div class="sent-message">Your subscription request has been sent. Thank you!</div>
-          </form>
-        </div>
-
       </div>
-    </div>
+    </footer>
 
-    <div class="container copyright text-center mt-4">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">Squadfree</strong> <span>All Rights Reserved</span></p>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-      </div>
-    </div>
+    <!-- Scroll Top -->
+    <a
+      href="#"
+      id="scroll-top"
+      class="scroll-top d-flex align-items-center justify-content-center"
+      ><i class="bi bi-arrow-up-short"></i
+    ></a>
 
-  </footer>
+    <!-- Preloader -->
+    <div id="preloader"></div>
 
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 
-  <!-- Preloader -->
-  <div id="preloader"></div>
+    <!-- Main JS File -->
+    <script src="assets/js/main.js"></script>
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <!-- JavaScript para activar la pestaña correspondiente -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const hash = window.location.hash;
+        if (hash) {
+          const tabLink = document.querySelector(
+            `button[data-bs-target="${hash}"]`
+          );
+          if (tabLink) {
+            const tab = new bootstrap.Tab(tabLink);
+            tab.show();
+          }
+        }
+      });
+    </script>
 
-  <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
+    <!-- Java script para subir y activa la pestaña correspondiente cuando seleccione een el footer: Nuestros Servicios -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Escuchar los cambios en el hash de la URL
+        window.addEventListener("hashchange", function () {
+          activateTabFromHash();
+        });
 
-</body>
+        // Activar la pestaña según el hash al cargar la página
+        activateTabFromHash();
 
+        // Función para activar la pestaña desde el hash
+        function activateTabFromHash() {
+          const hash = window.location.hash;
+
+          if (hash) {
+            const tabLink = document.querySelector(
+              `button[data-bs-target="${hash}"]`
+            );
+
+            if (tabLink) {
+              const tab = new bootstrap.Tab(tabLink);
+              tab.show(); // Mostrar la pestaña
+
+              // Desplazar hacia la sección de las pestañas con ajuste fino
+              const tabSection = document.querySelector("#myTab"); // Selecciona la barra de pestañas
+
+              // Obtener la posición de la sección de pestañas y ajustar el scroll
+              const offsetTop =
+                tabSection.getBoundingClientRect().top + window.scrollY - 100; // Ajusta -100 para desplazar un poco más arriba
+
+              // Desplazar suavemente a la sección de las pestañas
+              window.scrollTo({
+                top: offsetTop,
+                behavior: "smooth",
+              });
+            }
+          }
+        }
+      });
+    </script>
+  </body>
 </html>
