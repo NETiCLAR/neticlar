@@ -1,33 +1,86 @@
-<!DOCTYPE html>
 <html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Edilsa Álves - Servicios de Limpieza Profesional</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
 
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>NETiCLAR - Servicios de Limpieza Profesional</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
+    <!-- Favicons -->
+    <link href="assets/img/logos/edilsa-logo.png" rel="icon" />
+    <link href="assets/img/logos/edilsa-logo.png" rel="apple-touch-icon" />
 
-  <!-- Favicons -->
-  <link href="assets/img/logos/edilsa-logo.png" rel="icon">
-  <link href="assets/img/logos/edilsa-logo.png" rel="apple-touch-icon">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+    <link
+      href="assets/vendor/glightbox/css/glightbox.min.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="assets/css/translate.css" rel="stylesheet" />
 
-  <!-- Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
+    <!-- CSS General -->
+    <style>
+      /* Ocultar la barra superior de Google Translate */
+      iframe.goog-te-banner-frame,
+      .goog-te-banner-frame,
+      #goog-gt-tt {
+        display: none !important;
+        visibility: hidden !important;
+      }
 
-  <!-- =======================================================
+      body {
+        top: 0px !important; /* Evitar desplazamiento del body */
+      }
+
+      /* Ocultar el logotipo y estilos generales del widget */
+      .goog-te-gadget img,
+      .goog-logo-frame {
+        display: none !important;
+      }
+
+      /* Estilizar el widget de selector */
+      #google_translate_element {
+        font-family: "Poppins", sans-serif;
+        font-size: 18px;
+        color: #395c6a;
+        border: 2px solid #395c6a;
+        border-radius: 8px;
+        padding: 10px;
+        display: inline-block;
+      }
+
+      .goog-te-combo {
+        background-color: #ffffff;
+        border: 2px solid #395c6a;
+        padding: 8px;
+        font-size: 16px;
+        color: #395c6a;
+        border-radius: 5px;
+      }
+    </style>
+
+    <!-- Main CSS File -->
+    <link href="assets/css/main.css" rel="stylesheet" />
+
+    <!-- =======================================================
   * Template Name: Squadfree
   * Template URL: https://bootstrapmade.com/squadfree-free-bootstrap-template-creative/
   * Updated: Aug 07 2024 with Bootstrap v5.3.3
@@ -35,40 +88,92 @@
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
 
-  <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">-->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">-->
+  </head>
+  <script>
+    // Funci&oacute;n que ser&aacute; llamada desde el iframe
+    function handleLoginSuccess() {
+      console.log("handleLoginSuccess llamada");
+      try {
+        // Cerrar el modal de login pero mantener su backdrop
+        var loginModal = bootstrap.Modal.getInstance(
+          document.getElementById("loginModal")
+        );
+        if (loginModal) {
+          document.getElementById("loginModal").style.display = "none";
+          console.log("Modal de login ocultado");
+        }
 
-</head>
+        // Abrir el modal del dashboard sin crear nuevo backdrop
+        var dashboardModal = new bootstrap.Modal(
+          document.getElementById("dashboardModal"),
+          {
+            backdrop: false,
+          }
+        );
+        document.getElementById("dashboardFrame").src = "admin/index.html";
+        dashboardModal.show();
+        console.log("Modal de dashboard abierto");
 
-<body class="index-page">
+        // Agregar evento para recargar cuando se cierre el dashboard
+        document
+          .getElementById("dashboardModal")
+          .addEventListener("hidden.bs.modal", function (event) {
+            window.location.reload();
+          });
+      } catch (e) {
+        console.error("Error en handleLoginSuccess:", e);
+      }
+    }
 
-  <!-- Headr Section-->
-  <header id="header" class="header d-flex align-items-center fixed-top">
-    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+    // Escuchar mensajes del iframe
+    window.addEventListener("message", function (event) {
+      console.log("Mensaje recibido:", event.data);
+      if (event.data === "loginSuccess") {
+        handleLoginSuccess();
+      }
+    });
+  </script>
 
-      <!-- Logo -->
-      <a href="javascript:void(0);" class="logo d-flex align-items-center me-auto" data-bs-toggle="modal" data-bs-target="#logoModal">
-        <img src="assets/img/logos/edilsa-logo.png" alt="Logo Ampliado" style="cursor: pointer;">
-        <h1 class="sitename" style="text-transform: none;">NETiCLAR | Limpieza Profesional</h1>
-      </a>
-      
-      <!-- Logo ORIG
-      <a href="index.html" class="logo d-flex align-items-center">
-        Uncomment the line below if you also wish to use an image logo
-        <img src="assets/img/logo.png" alt="">
-        <h1 class="sitename">Squadfree</h1>
-      </a> -->
+  <body
+    class="index-page scrolled"
+    data-aos-easing="ease-in-out"
+    data-aos-duration="600"
+    data-aos-delay="0"
+  >
+    <!-- Header Section-->
+    <header id="header" class="header d-flex align-items-center fixed-top">
+      <div
+        class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between"
+      >
+        <!-- Logo -->
+        <a
+          href="javascript:void(0);"
+          class="logo d-flex align-items-center me-auto"
+          data-bs-toggle="modal"
+          data-bs-target="#logoModal"
+        >
+          <img
+            src="assets/img/logos/edilsa-logo.png"
+            alt="Logo Ampliado"
+            style="cursor: pointer"
+          />
+          <h1 class="sitename" style="text-transform: none">
+            Edilsa Álves | LIMPIEZA
+          </h1>
+        </a>
 
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="#hero" class="active">Inicio</a></li>
-          <li><a href="#about">Acerca</a></li>
-          <li><a href="#services">Servicios</a></li>
-          <li><a href="#portfolio">Portafolio</a></li>
-          <li><a href="#team">Equipo</a></li>
-          <li><a href="#pricing">Precios</a></li>
-          <li><a href="#faq">FAQs</a></li>
-          <li><a href="map.html">Mapa</a></li>
-          <!--
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="#hero" class="">Inicio</a></li>
+            <li><a href="#about" class="">Acerca</a></li>
+            <li><a href="#services" class="">Servicios</a></li>
+            <li><a href="#portfolio" class="">Portafolio</a></li>
+            <li><a href="#team" class="active">Equipo</a></li>
+            <li><a href="#pricing">Precios</a></li>
+            <li><a href="#faq">FAQs</a></li>
+            <li><a href="map.html">Mapa</a></li>
+            <!--
           <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="#">Dropdown 1</a></li>
@@ -87,1098 +192,2475 @@
             </ul>
           </li>
           -->
-          <li><a href="#contact">Contacto</a></li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
-
-    </div>  
-  </header>
-
-  <!-- Modal for Enlarged Image -->
-  <div class="modal fade" id="logoModal" tabindex="-1" aria-labelledby="logoModalLabel" aria-hidden="true">
-   <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="logoModalLabel">NETiCLAR | Limpieza Profesional</h5>
-         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body text-center">
-         <img src="assets/img/logos/edilsa-logo.png" alt="Logo Ampliado" class="img-fluid">
-        </div>
+            <li><a href="#contact">Contacto</a></li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
       </div>
-    </div>
-  </div>
+    </header>
 
-  <!-- Modal for Enlarged Image -->
-  <div class="modal fade" id="logoModal2" tabindex="-1" aria-labelledby="logoModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <a href="https://www.digitalizacionintegral.com/" target="_blank">
-            <h5 class="modal-title" id="logoModalLabel">Digitalización Integral<br/>Kit Digital | Tarragona</h5>
-          </a>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body text-center">
-          <a href="https://www.digitalizacionintegral.com/" target="_blank">
-            <img src="assets/img/logos/di-logo.png" alt="Logo Ampliado" class="img-fluid">
-          </a>  
+    <!-- Modal for Enlarged Image -->
+    <div
+      class="modal fade"
+      id="logoModal"
+      tabindex="-1"
+      aria-labelledby="logoModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="logoModalLabel">
+              EDILSA ÁLVES | Servicios de Limpieza
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body text-center">
+            <img
+              src="assets/img/logos/edilsa-logo.png"
+              alt="Logo Ampliado"
+              class="img-fluid"
+            />
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <main class="main">
-
-    <!-- Hero Section -->
-    <section id="hero" class="hero section accent-background">
-
-      <img src="assets/img/bgs/hero-bg6.png" alt="" data-aos="fade-in">
-
-      <div class="container text-center" data-aos="fade-up" data-aos-delay="100">
-        <h2>NETiCLAR</h2>
-        <h3><strong>CUIDAMOS TUS ESPACIOS. REFLEJAMOS TU BIENESTAR</strong></h3>
-        <h3>Tu espacio<strong><i> Limpio, Claro y Fresco</i></strong></h3>
-        <a href="#about" class="btn-scroll" title="Scroll Down"><i class="bi bi-chevron-down"></i></a>
-      </div>
-
-    </section><!-- /Hero Section -->
-
-    <!-- About Section -->
-    <section id="about" class="about section">
-
-      <div class="container">
-
-        <div class="row gy-5">
-
-          <div class="content col-xl-5 d-flex flex-column" data-aos="fade-up" data-aos-delay="100">
-            <h3>Acerca de NOSOTROS:</h3>
-            <p>
-              En NETiCLAR, creemos que la limpieza no es solo una tarea, sino un compromiso con la excelencia. Nuestra misión es ofrecer servicios de limpieza profesional que no solo mejoren los espacios, sino también la calidad de vida de quienes los habitan. Nos enorgullece cuidar cada detalle, asegurando que nuestros clientes siempre encuentren en nosotros un socio confiable y dedicado.<br/><br/>
-              Sabemos que un espacio limpio es un espacio que inspira, por eso trabajamos para transformar cada entorno en un lugar más agradable, seguro y saludable. Nuestros valores se basan en los pilares de profesionalismo, confianza, calidad y sostenibilidad:
-            </p>
-            <a href="#" class="about-btn align-self-center align-self-xl-start"><span>Inicio</span> <i class="bi bi-chevron-right"></i></a>
+    <!-- Modal for Enlarged Image -->
+    <div
+      class="modal fade"
+      id="logoModal2"
+      tabindex="-1"
+      aria-labelledby="logoModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <a href="https://www.digitalizacionintegral.com/" target="_blank">
+              <h5 class="modal-title" id="logoModalLabel">
+                Digitalizaci&oacute;n Integral<br />Kit Digital | Tarragona
+              </h5>
+            </a>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
           </div>
-
-          <div class="col-xl-7" data-aos="fade-up" data-aos-delay="200">
-            <div class="row gy-4">
-
-              <div class="col-md-6 icon-box position-relative">
-                <i class="bi bi-briefcase"></i>
-                <h4><a href="" class="stretched-link">Profesionalismo:</a></h4>
-                <p>
-                  Nos esforzamos por ofrecer soluciones de limpieza que superen las expectativas, con un equipo altamente capacitado y motivado para ofrecer resultados impecables en cada proyecto, ya sea residencial, comercial, industrial o institucional.
-                </p>
-              </div><!-- Icon-Box -->
-
-              <div class="col-md-6 icon-box position-relative">
-                <i class="bi bi-shield-check"></i>
-                <h4><a href="" class="stretched-link">Confianza:</a></h4>
-                <p>
-                  Creemos que la confianza es la base de toda relación sólida. Es por eso que en Net i Clar ponemos el máximo cuidado en cada servicio que realizamos, respetando los espacios y los tiempos de nuestros clientes.
-                </p>
-              </div><!-- Icon-Box -->
-
-              <div class="col-md-6 icon-box position-relative">
-                <i class="bi bi-gem"></i>
-                <h4><a href="" class="stretched-link">Calidad:</a></h4>
-                <p>
-                  La excelencia es nuestro objetivo principal. Usamos productos de primera calidad y técnicas avanzadas que garantizan una limpieza profunda y duradera, adaptada a las necesidades específicas de cada cliente.
-                </p>
-              </div><!-- Icon-Box -->
-
-              <div class="col-md-6 icon-box position-relative">
-                <i class="bi bi-recycle"></i>
-                <h4><a href="" class="stretched-link">Sostenibilidad:</a></h4>
-                <p>
-                  Comprometidos con el medio ambiente, utilizamos productos de limpieza ecológicos y aplicamos prácticas sostenibles que ayudan a reducir el impacto ambiental, asegurando que nuestro trabajo sea también responsable con el entorno.
-                </p>
-              </div><!-- Icon-Box -->
-
-            </div>
+          <div class="modal-body text-center">
+            <a href="https://www.digitalizacionintegral.com/" target="_blank">
+              <img
+                src="assets/img/logos/di-logo.png"
+                alt="Logo Ampliado"
+                class="img-fluid"
+              />
+            </a>
           </div>
-
         </div>
-
       </div>
+    </div>
 
-    </section><!-- /About Section -->
+    <main class="main">
+      <!-- Hero Section -->
+      <section id="hero" class="hero section accent-background">
+        <img
+          src="assets/img/bgs/hero-bg6.png"
+          alt=""
+          data-aos="fade-in"
+          class="aos-init aos-animate"
+        />
 
-    <!-- Services Section -->
-    <section id="services" class="services section">
+        <div
+          class="container text-center hero-title aos-init aos-animate"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          <h2>EDILSA ÁLVES</h2>
+          <h3>
+            <strong>Servicios de Limpieza y Conservación de Edificios</strong>
+          </h3>
+          <h4><i>Tu espacio Limpio, Claro y Fresco</i></h4>
+          <a href="#about" class="btn-scroll" title="Scroll Down"
+            ><i class="bi bi-chevron-down"></i
+          ></a>
+        </div>
+      </section>
+      <!-- /Hero Section -->
 
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Servicios</h2>
-        <p>Limpieza Especializada en Hogares, Entornos Comerciales, Industriales e Institucionales</p>
-      </div><!-- End Section Title -->
-
-      <div class="container">
-
-        <div class="row gy-4">
-
-          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-item position-relative">
-              <div class="icon"><i class="bi bi-house-door"></i></div>
-              <h4><a href="service-details.html#hogar" class="stretched-link">HOGAR</a></h4>
+      <!-- About Section -->
+      <section id="about" class="about section">
+        <div class="container">
+          <div class="row gy-5">
+            <div
+              class="content col-xl-5 d-flex flex-column aos-init aos-animate"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <h3>Acerca de NOSOTROS:</h3>
               <p>
-                Entendemos la importancia de mantener un hogar limpio y saludable. Ofrecemos servicios de limpieza para el hogar personalizados, adaptados a tus necesidades y horarios. Nuestro equipo utiliza productos seguros y efectivos para dejar cada rincón de tu hogar impecable, ya sea que necesites una limpieza profunda, de mantenimiento o una desinfección completa. Nos aseguramos de crear un ambiente fresco y limpio para el bienestar de tu familia.
+                Creemos que la limpieza no es solo una tarea, sino un compromiso
+                con la excelencia. Nuestra misi&oacute;n es ofrecer servicios de
+                limpieza profesional que no solo mejoren los espacios, sino
+                tambi&eacute;n la calidad de vida de quienes los habitan. Nos
+                enorgullece cuidar cada detalle, asegurando que nuestros
+                clientes siempre encuentren en nosotros un socio confiable y
+                dedicado. Sabemos que un espacio limpio es un espacio que
+                inspira, por eso trabajamos para transformar cada entorno en un
+                lugar m&aacute;s agradable, seguro y saludable. Nuestros valores
+                se basan en los pilares de profesionalismo, confianza, calidad y
+                sostenibilidad:
               </p>
+              <a
+                href="#"
+                class="about-btn align-self-center align-self-xl-start"
+                ><span>Inicio</span> <i class="bi bi-chevron-right"></i
+              ></a>
             </div>
-          </div><!-- End Service Item -->
 
-          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-item position-relative">
-              <div class="icon"><i class="bi bi-building icon"></i></div>
-              <h4><a href="service-details.html#comercial" class="stretched-link">COMERCIAL</a></h4>
-              <p>
-                Sabemos que la imagen de tu negocio es clave para el éxito. Por eso, en Net i Clar, ofrecemos soluciones de limpieza para espacios comerciales que garantizan una presentación impecable para tus clientes y un entorno de trabajo saludable para tus empleados. Desde oficinas y locales comerciales hasta tiendas y centros de atención al público, nuestros servicios se adaptan a tus horarios y necesidades, asegurando que tu negocio siempre esté limpio y presentable.
-              </p>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
-            <div class="service-item position-relative">
-              <div class="icon"><i class="bi bi-gear icon"></i></div>
-              <h4><a href="service-details.html#industrial" class="stretched-link">INDUSTRIAL</a></h4>
-              <p>
-                Los entornos industriales requieren un enfoque especializado debido a las condiciones exigentes y la naturaleza del trabajo. En Net i Clar, contamos con un equipo capacitado para llevar a cabo la limpieza en fábricas, almacenes y centros de producción, utilizando equipos y productos adecuados para estas áreas. Nos especializamos en mantener espacios de trabajo seguros, limpios y organizados, cumpliendo con todas las normativas de higiene y seguridad.
-              </p>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="400">
-            <div class="service-item position-relative">
-              <div class="icon"><i class="bi bi-bank icon"></i></div>
-              <h4><a href="service-details.html#institucional" class="stretched-link">INSTITUCIONAL</a></h4>
-              <p>
-                Las instituciones, ya sean educativas, sanitarias o gubernamentales, requieren un nivel de limpieza que asegure la seguridad y el bienestar de quienes las frecuentan. En Net i Clar, ofrecemos servicios de limpieza para hospitales, escuelas, oficinas gubernamentales y otras instituciones, con un enfoque en la desinfección y el mantenimiento de espacios que demandan un alto nivel de higiene. Nos comprometemos a garantizar ambientes limpios, seguros y confortables.
-              </p>
-            </div>
-          </div><!-- End Service Item -->
-
-        </div>
-
-      </div>
-
-    </section><!-- /Services Section -->
-
-    <!-- Stats Section -->
-    <section id="stats" class="stats section light-background">
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-3 col-md-6">
-            <div class="stats-item">
-              <i class="bi bi-emoji-smile"></i>
-              <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
-              <p><strong>Clientes Satisfechos</strong> <span><br/>con nuestros servicios</span></p>
-            </div>
-          </div><!-- End Stats Item -->
-
-          <div class="col-lg-3 col-md-6">
-            <div class="stats-item">
-              <i class="bi bi-bucket"></i>
-              <span data-purecounter-start="0" data-purecounter-end="520" data-purecounter-duration="1" class="purecounter"></span>
-              <p><strong>Limpiezas Realizadas</strong> <span>durante el año</span></p>
-            </div>
-          </div><!-- End Stats Item -->
-
-          <div class="col-lg-3 col-md-6">
-            <div class="stats-item">
-              <i class="bi bi-clock"></i>
-              <span data-purecounter-start="0" data-purecounter-end="3120" data-purecounter-duration="1" class="purecounter"></span>
-              <p><strong>Horas de Trabajo</strong> <span><br/>en el año</span></p>
-            </div>
-          </div><!-- End Stats Item -->
-
-          <div class="col-lg-3 col-md-6">
-            <div class="stats-item">
-              <i class="bi bi-people"></i>
-              <span data-purecounter-start="0" data-purecounter-end="46" data-purecounter-duration="1" class="purecounter"></span>
-              <p><strong>Trabajadores Involucrados</strong> <span><br/>en las labores de limpieza</span></p>
-            </div>
-          </div><!-- End Stats Item -->
-
-        </div>
-
-      </div>
-
-    </section><!-- /Stats Section -->
-
-    <!-- Call To Action Section -->
-    <section id="call-to-action" class="call-to-action section accent-background">
-
-      <img src="assets/img/bgs/hero-bg9.jpg" alt="">
-
-      <div class="container">
-        <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="100">
-          <div class="col-xl-10">
-            <div class="text-center">
-              <h1><strong>Call To Action</strong></h1>
-              <h3>Contáctanos y solicita un cotización de cualquiera de nuestros servicios</h3>
-              <a class="cta-btn" href="#contact">Call To Action</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </section><!-- /Call To Action Section -->
-
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Portafolio</h2>
-        <p>
-          Aquí puedes ver ejemplos de nuestro trabajo en acción. Cada imagen muestra la dedicación y el detalle que ponemos en cada limpieza, asegurando que cada espacio esté impecable y listo para su uso. Desde oficinas y hogares hasta fábricas y hospitales, NETiCLAR transforma los ambientes con un enfoque profesional y personalizado.
-        </p>
-      </div><!-- End Section Title -->
-
-      <div class="container">
-
-        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
-
-          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
-            <li data-filter="*" class="filter-active">Todas</li>
-            <li data-filter=".filter-app">Hogar</li>
-            <li data-filter=".filter-product">Comercial</li>
-            <li data-filter=".filter-branding">Industrial</li>
-            <li data-filter=".filter-books">Institucional</li>
-          </ul><!-- End Portfolio Filters -->
-
-          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
-
-            <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
-
-              <!-- Block 1-->
-
-              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-                <img src="assets/img/portfolio/hogar-1.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>HOGAR</h4>
-                  <p>Limpieza en Hogares</p>
-                  <a href="assets/img/portfolio/hogar-1.jpg" title="App 1" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div><!-- End Portfolio Item -->
-  
-              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-                <img src="assets/img/portfolio/comercial-1.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>COMERCIAL</h4>
-                  <p>Limpieza en Oficinas</p>
-                  <a href="assets/img/portfolio/comercial-1.jpg" title="Product 1" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div><!-- End Portfolio Item -->
-  
-              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-                <img src="assets/img/portfolio/industrial-1.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>INDUSTRIAL</h4>
-                  <p>Limpieza en Industrias</p>
-                  <a href="assets/img/portfolio/industrial-1.jpg" title="Branding 1" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div><!-- End Portfolio Item -->
-  
-              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
-                <img src="assets/img/portfolio/institucional-1.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>INSTITUCIONAL</h4>
-                  <p>Limpieza en Instituciones</p>
-                  <a href="assets/img/portfolio/institucional-1.jpg" title="Branding 1" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div><!-- End Portfolio Item -->
-
-              <!-- Block 2 -->
-  
-              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-                <img src="assets/img/portfolio/hogar-2.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>HOGAR</h4>
-                  <p>Limpieza en Hogares</p>
-                  <a href="assets/img/portfolio/hogar-2.jpg" title="App 2" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div><!-- End Portfolio Item -->
-  
-              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-                <img src="assets/img/portfolio/comercial-2.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>COMERCIAL</h4>
-                  <p>Limpieza en Oficinas</p>
-                  <a href="assets/img/portfolio/comercial-2.jpg" title="Product 2" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div><!-- End Portfolio Item -->
-  
-              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-                <img src="assets/img/portfolio/industrial-2.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>INDUSTRIAL</h4>
-                  <p>Limpieza en Industrias</p>
-                  <a href="assets/img/portfolio/industrial-2.jpg" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div><!-- End Portfolio Item -->
-  
-              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
-                <img src="assets/img/portfolio/institucional-2.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>INSTITUCIONAL</h4>
-                  <p>Limpieza en Instituciones</p>
-                  <a href="assets/img/portfolio/institucional-2.jpg" title="Branding 2" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div><!-- End Portfolio Item -->
-
-              <!-- Block 3 -->
-  
-              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-                <img src="assets/img/portfolio/hogar-3.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>HOGAR</h4>
-                  <p>Limpieza en Hogares</p>
-                  <a href="assets/img/portfolio/hogar-3.jpg" title="App 3" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div><!-- End Portfolio Item -->
-  
-              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-                <img src="assets/img/portfolio/comercial-3.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>COMERCIAL</h4>
-                  <p>Limpieza en Oficinas</p>
-                  <a href="assets/img/portfolio/comercial-3.jpg" title="Product 3" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div><!-- End Portfolio Item -->
-  
-              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-                <img src="assets/img/portfolio/industrial-3.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>INDUSTRIAL</h4>
-                  <p>Limpieza en Industrias</p>
-                  <a href="assets/img/portfolio/industrial-3.jpg" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div><!-- End Portfolio Item -->
-  
-              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
-                <img src="assets/img/portfolio/institucional-3.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>INSTITUCIONAL</h4>
-                  <p>Limpieza en Instituciones</p>
-                  <a href="assets/img/portfolio/institucional-3.jpg" title="Branding 3" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div><!-- End Portfolio Item -->  
-
-              <!-- Block 4 -->
-
-              <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
-
-                <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-                  <img src="assets/img/portfolio/hogar-4.jpg" class="img-fluid" alt="">
-                  <div class="portfolio-info">
-                    <h4>HOGAR</h4>
-                    <p>Limpieza en Hogares</p>
-                    <a href="assets/img/portfolio/hogar-4.jpg" title="App 1" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                    <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                  </div>
-                </div><!-- End Portfolio Item -->
-    
-                <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-                  <img src="assets/img/portfolio/comercial-4.jpg" class="img-fluid" alt="">
-                  <div class="portfolio-info">
-                    <h4>COMERCIAL</h4>
-                    <p>Limpieza en Oficinas</p>
-                    <a href="assets/img/portfolio/comercial-4.jpg" title="Product 1" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                    <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                  </div>
-                </div><!-- End Portfolio Item -->
-    
-                <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-                  <img src="assets/img/portfolio/industrial-4.jpg" class="img-fluid" alt="">
-                  <div class="portfolio-info">
-                    <h4>INDUSTRIAL</h4>
-                    <p>Limpieza en Industrias</p>
-                    <a href="assets/img/portfolio/industrial-4.jpg" title="Branding 1" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                    <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                  </div>
-                </div><!-- End Portfolio Item -->
-    
-                <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
-                  <img src="assets/img/portfolio/institucional-4.jpg" class="img-fluid" alt="">
-                  <div class="portfolio-info">
-                    <h4>INSTITUCIONAL</h4>
-                    <p>Limpieza en Instituciones</p>
-                    <a href="assets/img/portfolio/institucional-4.jpg" title="Branding 1" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                    <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                  </div>
-                </div><!-- End Portfolio Item -->
-
-                <!-- Block 5 -->
-    
-                <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-                  <img src="assets/img/portfolio/hogar-5.jpg" class="img-fluid" alt="">
-                  <div class="portfolio-info">
-                    <h4>HOGAR</h4>
-                    <p>Limpieza en Hogares</p>
-                    <a href="assets/img/portfolio/hogar-5.jpg" title="App 2" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                    <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                  </div>
-                </div><!-- End Portfolio Item -->
-    
-                <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-                  <img src="assets/img/portfolio/comercial-5.jpg" class="img-fluid" alt="">
-                  <div class="portfolio-info">
-                    <h4>COMERCIAL</h4>
-                    <p>Limpieza en Oficinas</p>
-                    <a href="assets/img/portfolio/comercial-5.jpg" title="Product 2" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                    <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                  </div>
-                </div><!-- End Portfolio Item -->
-    
-                <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-                  <img src="assets/img/portfolio/industrial-5.jpg" class="img-fluid" alt="">
-                  <div class="portfolio-info">
-                    <h4>INDUSTRIAL</h4>
-                   <p>Limpieza en Industrias</p>
-                    <a href="assets/img/portfolio/industrial-5.jpg" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                    <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                  </div>
-                </div><!-- End Portfolio Item -->
-    
-                <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
-                  <img src="assets/img/portfolio/institucional-5.jpg" class="img-fluid" alt="">
-                  <div class="portfolio-info">
-                    <h4>INSTITUCIONAL</h4>
-                    <p>Limpieza en Instituciones</p>
-                    <a href="assets/img/portfolio/institucional-5.jpg" title="Branding 2" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                    <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                  </div>
-                </div><!-- End Portfolio Item -->
-
-                <!-- Block 6 -->
-    
-                <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-                  <img src="assets/img/portfolio/hogar-6.jpg" class="img-fluid" alt="">
-                  <div class="portfolio-info">
-                    <h4>HOGAR</h4>
-                    <p>Limpieza en Hogares</p>
-                    <a href="assets/img/portfolio/hogar-6.jpg" title="App 3" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                    <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                  </div>
-                </div><!-- End Portfolio Item -->
-    
-                <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-                  <img src="assets/img/portfolio/comercial-6.jpg" class="img-fluid" alt="">
-                  <div class="portfolio-info">
-                    <h4>COMERCIAL</h4>
-                    <p>Limpieza en Oficinas</p>
-                    <a href="assets/img/portfolio/comercial-6.jpg" title="Product 3" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                    <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                  </div>
-                </div><!-- End Portfolio Item -->
-    
-                <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-                  <img src="assets/img/portfolio/industrial-6.jpg" class="img-fluid" alt="">
-                  <div class="portfolio-info">
-                    <h4>INDUSTRIAL</h4>
-                    <p>Limpieza en Industrias</p>
-                    <a href="assets/img/portfolio/industrial-6.jpg" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                    <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                  </div>
-                </div><!-- End Portfolio Item -->
-    
-                <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
-                  <img src="assets/img/portfolio/institucional-6.jpg" class="img-fluid" alt="">
-                  <div class="portfolio-info">
-                    <h4>INSTITUCIONAL</h4>
-                    <p>Limpieza en Instituciones</p>
-                    <a href="assets/img/portfolio/institucional-6.jpg" title="Branding 3" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                    <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                  </div>
-                </div><!-- End Portfolio Item -->  
-
-          </div><!-- End Portfolio Container -->
-
-        </div>
-
-      </div>
-
-    </section><!-- /Portfolio Section -->
-
-    
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials section dark-background">
-
-      <img src="assets/img/bgs/testimonials-bg.png" class="testimonials-bg" alt="">
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="swiper init-swiper">
-          <script type="application/json" class="swiper-config">
-            {
-              "loop": true,
-              "speed": 600,
-              "autoplay": {
-                "delay": 5000
-              },
-              "slidesPerView": "auto",
-              "pagination": {
-                "el": ".swiper-pagination",
-                "type": "bullets",
-                "clickable": true
-              }
-            }
-          </script>
-          <div class="swiper-wrapper">
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-                <h3>Laia García</h3>
-                <h4>Gerente de una Tienda</h4>
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>NETiCLAR asegura que mi local esté siempre perfecto para los clientes. La atención al detalle es inigualable.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-                <h3>Jordi Martínez</h3>
-                <h4>Propietario de una Vivienda</h4>
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Gracias a NETiCLAR, mi hogar siempre está impecable y fresco. Un servicio de confianza y calidad.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-                <h3>Marta Soler</h3>
-                <h4>Directora de una Escuela</h4>
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Gracias a NETiCLAR, nuestras instalaciones se mantienen impecables, lo que garantiza un entorno seguro para nuestros estudiantes.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-                <h3>Pau Fernández</h3>
-                <h4>Supervisor de una Planta Industrial</h4>
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>El equipo de NETiCLAR cumple con los estándares más altos de seguridad e higiene en nuestra fábrica. Un servicio excelente.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-                <h3>Núria Vidal</h3>
-                <h4>Abogada de un Despacho</h4>
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>NETiCLAR nos ha permitido mantener un ambiente de trabajo limpio y profesional, lo que mejora la productividad de nuestro equipo.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
-
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-
-      </div>
-
-    </section><!-- /Testimonials Section -->
-
-
-    <!-- Team Section -->
-    <section id="team" class="team section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Equipo</h2>
-        <p>En NETiCLAR, sabemos que nuestro mayor recurso es nuestro equipo. Contamos con un grupo de profesionales comprometidos, altamente capacitados y con una amplia experiencia en el sector de la limpieza. Cada miembro de nuestro equipo comparte los valores fundamentales de la empresa: profesionalismo, calidad, confianza y sostenibilidad.</p>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row gy-5">
-
-          <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="100">
-            <div class="member-img">
-              <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
-              <div class="social">
-                <a href="#"><i class="bi bi-twitter-x"></i></a>
-                <a href="#"><i class="bi bi-facebook"></i></a>
-                <a href="#"><i class="bi bi-instagram"></i></a>
-                <a href="#"><i class="bi bi-linkedin"></i></a>
-              </div>
-            </div>
-            <div class="member-info text-center">
-              <h4>Manuel García</h4>
-              <span>Director General (CEO)</span>
-              <p>Responsable de la estrategia y la visión global de la empresa, supervisando todas las operaciones.</p>
-            </div>
-          </div><!-- End Team Member -->
-
-          <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="200">
-            <div class="member-img">
-              <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
-              <div class="social">
-                <a href="#"><i class="bi bi-twitter-x"></i></a>
-                <a href="#"><i class="bi bi-facebook"></i></a>
-                <a href="#"><i class="bi bi-instagram"></i></a>
-                <a href="#"><i class="bi bi-linkedin"></i></a>
-              </div>
-            </div>
-            <div class="member-info text-center">
-              <h4>Laura Pérez</h4>
-              <span>Directora de Operaciones (COO)</span>
-              <p>Encargada de supervisar las operaciones diarias de limpieza y la coordinación de los equipos en los diferentes proyectos.</p>
-            </div>
-          </div><!-- End Team Member -->
-
-          <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="300">
-            <div class="member-img">
-              <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
-              <div class="social">
-                <a href="#"><i class="bi bi-twitter-x"></i></a>
-                <a href="#"><i class="bi bi-facebook"></i></a>
-                <a href="#"><i class="bi bi-instagram"></i></a>
-                <a href="#"><i class="bi bi-linkedin"></i></a>
-              </div>
-            </div>
-            <div class="member-info text-center">
-              <h4>Javier Martínez</h4>
-              <span>Director Comercial</span>
-              <p>Responsable de la gestión de las relaciones con los clientes, la captación de nuevos negocios y la expansión de los servicios.</p>
-            </div>
-          </div><!-- End Team Member -->
-
-          <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="400">
-            <div class="member-img">
-              <img src="assets/img/team/team-4.jpg" class="img-fluid" alt="">
-              <div class="social">
-                <a href="#"><i class="bi bi-twitter-x"></i></a>
-                <a href="#"><i class="bi bi-facebook"></i></a>
-                <a href="#"><i class="bi bi-instagram"></i></a>
-                <a href="#"><i class="bi bi-linkedin"></i></a>
-              </div>
-            </div>
-            <div class="member-info text-center">
-              <h4>Elena Sánchez</h4>
-              <span>Directora de Recursos Humanos</span>
-              <p>Dirige la contratación, formación y gestión del personal, asegurando que el equipo esté motivado. </p>
-            </div>
-          </div><!-- End Team Member -->
-
-          <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="500">
-            <div class="member-img">
-              <img src="assets/img/team/team-5.jpg" class="img-fluid" alt="">
-              <div class="social">
-                <a href="#"><i class="bi bi-twitter-x"></i></a>
-                <a href="#"><i class="bi bi-facebook"></i></a>
-                <a href="#"><i class="bi bi-instagram"></i></a>
-                <a href="#"><i class="bi bi-linkedin"></i></a>
-              </div>
-            </div>
-            <div class="member-info text-center">
-              <h4>Carlos Fernández</h4>
-              <span>Director de Marketing</span>
-              <p>Encargado de la promoción de la marca, la creación de campañas publicitarias y el desarrollo de estrategias para nuevos clientes.</p>
-            </div>
-          </div><!-- End Team Member -->
-
-          <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="600">
-            <div class="member-img">
-              <img src="assets/img/team/team-6.jpg" class="img-fluid" alt="">
-              <div class="social">
-                <a href="#"><i class="bi bi-twitter-x"></i></a>
-                <a href="#"><i class="bi bi-facebook"></i></a>
-                <a href="#"><i class="bi bi-instagram"></i></a>
-                <a href="#"><i class="bi bi-linkedin"></i></a>
-              </div>
-            </div>
-            <div class="member-info text-center">
-              <h4>Isabel López</h4>
-              <span>Directora Financiera (CFO)</span>
-              <p>Responsable de la planificación financiera, control de presupuestos y gestión de los recursos económicos.</p>
-            </div>
-          </div><!-- End Team Member -->
-
-
-        </div>
-
-      </div>
-
-    </section><!-- /Team Section -->
-
-    <!-- Pricing Section -->
-    <section id="pricing" class="pricing section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Precios</h2>
-        <p>En NETiCLAR, ofrecemos planes de limpieza adaptados a tus necesidades y presupuesto. Ya sea para un servicio puntual o regular, garantizamos calidad, personal capacitado y el uso de productos ecológicos. Elige el plan perfecto para ti y disfruta de un espacio impecable.</p>
-      </div><!-- End Section Title -->
-
-      <div class="container">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="100">
-            <div class="pricing-item">
-              <h3>Plan BÁSICO</h3>
-              <h4><sup>€</sup>99<span> / mes</span></h4>
-              <ul>
-                <li><i class="bi bi-check"></i> <span>1 limpieza semanal</span></li>
-                <li><i class="bi bi-check"></i> <span>Ideal para hogares o pequeñas oficinas</span></li>
-                <li><i class="bi bi-check"></i> <span>Uso de productos de limpieza ecológicos</span></li>
-                <li><i class="bi bi-check"></i> <span>Personal capacitado</span></li>
-                <li><i class="bi bi-check"></i> <span>Atención a áreas comunes y superficies generales</span></li>
-              </ul>
-              <a href="#" class="buy-btn">Comprar Ahora</a>
-            </div>
-          </div><!-- End Pricing Item -->
-
-          <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="200">
-            <div class="pricing-item featured">
-              <h3>Plan ESTÁNDAR</h3>
-              <h4><sup>€</sup>199<span> / mes</span></h4>
-              <ul>
-                <li><i class="bi bi-check"></i> <span>2 limpiezas semanales</span></li>
-                <li><i class="bi bi-check"></i> <span>Recomendado para oficinas medianas y locales comerciales</span></li>
-                <li><i class="bi bi-check"></i> <span>Limpieza profunda de áreas comunes y específicas</span></li>
-                <li><i class="bi bi-check"></i> <span>Uso de productos ecológicos especializados</span></li>
-                <li><i class="bi bi-check"></i> <span>Supervisión periódica de calidad</span></li>
-              </ul>
-              <a href="#" class="buy-btn">Comprar Ahora</a>
-            </div>
-          </div><!-- End Pricing Item -->
-
-          <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="300">
-            <div class="pricing-item">
-              <h3>Plan PREMIUM</h3>
-              <h4><sup>€</sup>299<span> / mes</span></h4>
-              <ul>
-                <li><i class="bi bi-check"></i> <span>3 limpiezas semanales o servicio personalizado</span></li>
-                <li><i class="bi bi-check"></i> <span>Ideal para grandes oficinas, industrias o instituciones</span></li>
-                <li><i class="bi bi-check"></i> <span>Limpieza especializada de áreas difíciles (ventanas, techos, etc.)</span></li>
-                <li><i class="bi bi-check"></i> <span>Desinfección completa de espacios</span></li>
-                <li><i class="bi bi-check"></i> <span>Soporte y atención preferencial</span></li>
-              </ul>
-              <a href="#" class="buy-btn">Comprar Ahora</a>
-            </div>
-          </div><!-- End Pricing Item -->
-
-        </div>
-
-      </div>
-
-    </section><!-- /Pricing Section -->
-
-    <!-- Faq Section -->
-    <section id="faq" class="faq section light-background">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Preguntas Frecuentes (FAQs)</h2>
-        <p>En NETiCLAR, sabemos que puedes tener preguntas sobre nuestros servicios de limpieza. Para facilitarte las respuestas, hemos reunido las preguntas más frecuentes de nuestros clientes. Si no encuentras lo que buscas, no dudes en contactarnos. ¡Estamos aquí para ayudarte!</p>
-      </div><!-- End Section Title -->
-
-      <div class="container">
-
-        <div class="row faq-item" data-aos="fade-up" data-aos-delay="100">
-          <div class="col-lg-5 d-flex">
-            <i class="bi bi-question-circle"></i>
-            <h4>1. ¿Qué tipo de servicios de limpieza ofrecen?</h4>
-          </div>
-          <div class="col-lg-7">
-            <p>
-              Ofrecemos una amplia gama de servicios de limpieza, que incluyen limpiezas para hogares, oficinas, locales comerciales, instalaciones industriales y entidades institucionales. Nos adaptamos a las necesidades específicas de cada cliente, garantizando un entorno limpio y saludable.
-            </p>
-          </div>
-        </div><!-- End F.A.Q Item-->
-
-        <div class="row faq-item" data-aos="fade-up" data-aos-delay="200">
-          <div class="col-lg-5 d-flex">
-            <i class="bi bi-question-circle"></i>
-            <h4>2. ¿Utilizan productos de limpieza ecológicos?</h4>
-          </div>
-          <div class="col-lg-7">
-            <p>
-              Sí, en NETiCLAR nos comprometemos con el cuidado del medio ambiente. Utilizamos productos de limpieza ecológicos y seguros, que no solo garantizan una limpieza efectiva, sino también la protección de tu salud y la del entorno.
-            </p>
-          </div>
-        </div><!-- End F.A.Q Item-->
-
-        <div class="row faq-item" data-aos="fade-up" data-aos-delay="300">
-          <div class="col-lg-5 d-flex">
-            <i class="bi bi-question-circle"></i>
-            <h4>3. ¿Cómo puedo contratar un servicio de limpieza?</h4>
-          </div>
-          <div class="col-lg-7">
-            <p>
-              Puedes contratar nuestros servicios fácilmente a través de nuestro sitio web completando el formulario de contacto, o bien, llamando a nuestro número de atención al cliente. También respondemos a solicitudes por correo electrónico, y te ayudaremos a encontrar el plan adecuado para ti.
-            </p>
-          </div>
-        </div><!-- End F.A.Q Item-->
-
-        <div class="row faq-item" data-aos="fade-up" data-aos-delay="400">
-          <div class="col-lg-5 d-flex">
-            <i class="bi bi-question-circle"></i>
-            <h4>4. ¿Ofrecen servicios personalizados según las necesidades?</h4>
-          </div>
-          <div class="col-lg-7">
-            <p>
-              Sí, en Net i Clar personalizamos nuestros servicios de limpieza según tus necesidades. Ya sea que necesites limpiezas puntuales, mantenimiento regular o servicios especializados, trabajamos contigo para adaptar nuestros planes a tus requerimientos.
-            </p>
-          </div>
-        </div><!-- End F.A.Q Item-->
-
-        <div class="row faq-item" data-aos="fade-up" data-aos-delay="500">
-          <div class="col-lg-5 d-flex">
-            <i class="bi bi-question-circle"></i>
-            <h4>5. ¿Qué áreas cubren sus servicios?</h4>
-          </div>
-          <div class="col-lg-7">
-            <p>
-              Ofrecemos nuestros servicios de limpieza en toda la región de Tarragona y áreas cercanas. Atendemos tanto a clientes residenciales como a empresas y organizaciones en los sectores comercial, industrial e institucional.
-            </p>
-          </div>
-        </div><!-- End F.A.Q Item-->
-
-      </div>
-
-    </section><!-- /Faq Section -->
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Contacto</h2>
-        <p>En NETiCLAR, estamos aquí para ayudarte con cualquier consulta o solicitud de nuestros servicios de limpieza. No dudes en ponerte en contacto con nosotros para recibir más información, solicitar un presupuesto personalizado o agendar una cita. ¡Nuestro equipo estará encantado de atenderte!</p>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-5">
-
-            <div class="info-wrap">
-              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
-                <i class="bi bi-geo-alt flex-shrink-0"></i>
-                <div>
-                  <h3>Dirección</h3>
-                  <p>Carrer de la Pau, 15, 43001 Tarragona, España</p>
-                </div>
-              </div><!-- End Info Item -->
-
-              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
-                <i class="bi bi-telephone flex-shrink-0"></i>
-                <div>
-                  <h3>Teléfonos</h3>
-                  <p>+34 977 123 456 / +34 612 345 678</p>
-                </div>
-              </div><!-- End Info Item -->
-
-              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
-                <i class="bi bi-envelope flex-shrink-0"></i>
-                <div>
-                  <h3>Correo</h3>
-                  <p>info@example.com</p>
-                </div>
-              </div><!-- End Info Item -->
-
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.5525553806783!2d1.2413919760278774!3d41.11774537258233!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a15a0ae24b81d5%3A0xb62a7e2bb3ebec1e!2sCarrer%20de%20la%20Pau%2C%2015%2C%2043001%20Tarragona%2C%20Espa%C3%B1a!5e0!3m2!1ses!2ses!4v1696267345152!5m2!1ses!2ses" frameborder="0" style="border:2px solid #67b0d1; width: 100%; height: 270px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-          </div>
-
-          <div class="col-lg-7">
-            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+            <div
+              class="col-xl-7 aos-init aos-animate"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
               <div class="row gy-4">
-
-                <div class="col-md-6">
-                  <label for="name-field" class="pb-2">Nombre:</label>
-                  <input type="text" name="name" id="name-field" class="form-control" required="">
+                <div class="col-md-6 icon-box position-relative">
+                  <i class="bi bi-briefcase"></i>
+                  <h4>
+                    <a href="" class="stretched-link">Profesionalismo:</a>
+                  </h4>
+                  <p>
+                    Nos esforzamos por ofrecer soluciones de limpieza que
+                    superen las expectativas, con un equipo altamente capacitado
+                    y motivado para ofrecer resultados impecables en cada
+                    proyecto, ya sea residencial, comercial, industrial o
+                    institucional.
+                  </p>
                 </div>
+                <!-- Icon-Box -->
 
-                <div class="col-md-6">
-                  <label for="email-field" class="pb-2">Email:</label>
-                  <input type="email" class="form-control" name="email" id="email-field" required="">
+                <div class="col-md-6 icon-box position-relative">
+                  <i class="bi bi-shield-check"></i>
+                  <h4><a href="" class="stretched-link">Confianza:</a></h4>
+                  <p>
+                    Creemos que la confianza es la base de toda relaci&oacute;n
+                    s&oacute;lida. Es por eso que ponemos el m&aacute;ximo
+                    cuidado en cada servicio que realizamos, respetando los
+                    espacios y los tiempos de nuestros clientes.
+                  </p>
                 </div>
+                <!-- Icon-Box -->
 
-                <div class="col-md-12">
-                  <label for="subject-field" class="pb-2">Asunto:</label>
-                  <input type="text" class="form-control" name="subject" id="subject-field" required="">
+                <div class="col-md-6 icon-box position-relative">
+                  <i class="bi bi-gem"></i>
+                  <h4><a href="" class="stretched-link">Calidad:</a></h4>
+                  <p>
+                    La excelencia es nuestro objetivo principal. Usamos
+                    productos de primera calidad y t&eacute;cnicas avanzadas que
+                    garantizan una limpieza profunda y duradera, adaptada a las
+                    necesidades espec&iacute;ficas de cada cliente.
+                  </p>
                 </div>
+                <!-- Icon-Box -->
 
-                <div class="col-md-12">
-                  <label for="message-field" class="pb-2">Mensaje:</label>
-                  <textarea class="form-control" name="message" rows="10" id="message-field" required=""></textarea>
+                <div class="col-md-6 icon-box position-relative">
+                  <i class="bi bi-recycle"></i>
+                  <h4><a href="" class="stretched-link">Sostenibilidad:</a></h4>
+                  <p>
+                    Comprometidos con el medio ambiente, utilizamos productos de
+                    limpieza ecol&oacute;gicos y aplicamos pr&aacute;cticas
+                    sostenibles que ayudan a reducir el impacto ambiental,
+                    asegurando que nuestro trabajo sea tambi&eacute;n
+                    responsable con el entorno.
+                  </p>
                 </div>
+                <!-- Icon-Box -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /About Section -->
 
-                <div class="col-md-12 text-center">
-                  <div class="loading">Cargando</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Su mensaje ha sido enviado. Gracias!</div>
+      <!-- Services Section -->
+      <section id="services" class="services section">
+        <!-- Section Title -->
+        <div
+          class="container section-title aos-init aos-animate"
+          data-aos="fade-up"
+        >
+          <h2>Servicios</h2>
+          <p>
+            Limpieza Especializada en Hogares, Entornos Comerciales,
+            Industriales e Institucionales
+          </p>
+        </div>
+        <!-- End Section Title -->
 
-                  <button type="submit">Enviar Mensaje</button>
+        <div class="container">
+          <div class="row gy-4">
+            <div
+              class="col-xl-3 col-md-6 d-flex aos-init aos-animate"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <div class="service-item position-relative">
+                <div class="icon"><i class="bi bi-house-door"></i></div>
+                <h4>
+                  <a href="service-details.html#hogar" class="stretched-link"
+                    >HOGAR</a
+                  >
+                </h4>
+                <p>
+                  Entendemos la importancia de mantener un hogar limpio y
+                  saludable. Ofrecemos servicios de limpieza para el hogar
+                  personalizados, adaptados a tus necesidades y horarios.
+                  Nuestro equipo utiliza productos seguros y efectivos para
+                  dejar cada rinc&oacute;n de tu hogar impecable, ya sea que
+                  necesites una limpieza profunda, de mantenimiento o una
+                  desinfecci&oacute;n completa. Nos aseguramos de crear un
+                  ambiente fresco y limpio para el bienestar de tu familia.
+                </p>
+              </div>
+            </div>
+            <!-- End Service Item -->
+
+            <div
+              class="col-xl-3 col-md-6 d-flex aos-init aos-animate"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <div class="service-item position-relative">
+                <div class="icon"><i class="bi bi-building icon"></i></div>
+                <h4>
+                  <a
+                    href="service-details.html#comercial"
+                    class="stretched-link"
+                    >COMERCIAL</a
+                  >
+                </h4>
+                <p>
+                  Sabemos que la imagen de tu negocio es clave para el
+                  &eacute;xito. Por eso, en Net i Clar, ofrecemos soluciones de
+                  limpieza para espacios comerciales que garantizan una
+                  presentaci&oacute;n impecable para tus clientes y un entorno
+                  de trabajo saludable para tus empleados. Desde oficinas y
+                  locales comerciales hasta tiendas y centros de atenci&oacute;n
+                  al p&uacute;blico, nuestros servicios se adaptan a tus
+                  horarios y necesidades, asegurando que tu negocio siempre
+                  est&eacute; limpio y presentable.
+                </p>
+              </div>
+            </div>
+            <!-- End Service Item -->
+
+            <div
+              class="col-xl-3 col-md-6 d-flex aos-init aos-animate"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              <div class="service-item position-relative">
+                <div class="icon"><i class="bi bi-gear icon"></i></div>
+                <h4>
+                  <a
+                    href="service-details.html#industrial"
+                    class="stretched-link"
+                    >INDUSTRIAL</a
+                  >
+                </h4>
+                <p>
+                  Los entornos industriales requieren un enfoque especializado
+                  debido a las condiciones exigentes y la naturaleza del
+                  trabajo. En Net i Clar, contamos con un equipo capacitado para
+                  llevar a cabo la limpieza en f&aacute;bricas, almacenes y
+                  centros de producci&oacute;n, utilizando equipos y productos
+                  adecuados para estas &aacute;reas. Nos especializamos en
+                  mantener espacios de trabajo seguros, limpios y organizados,
+                  cumpliendo con todas las normativas de higiene y seguridad.
+                </p>
+              </div>
+            </div>
+            <!-- End Service Item -->
+
+            <div
+              class="col-xl-3 col-md-6 d-flex aos-init aos-animate"
+              data-aos="fade-up"
+              data-aos-delay="400"
+            >
+              <div class="service-item position-relative">
+                <div class="icon"><i class="bi bi-bank icon"></i></div>
+                <h4>
+                  <a
+                    href="service-details.html#institucional"
+                    class="stretched-link"
+                    >INSTITUCIONAL</a
+                  >
+                </h4>
+                <p>
+                  Las instituciones, ya sean educativas, sanitarias o
+                  gubernamentales, requieren un nivel de limpieza que asegure la
+                  seguridad y el bienestar de quienes las frecuentan. En Net i
+                  Clar, ofrecemos servicios de limpieza para hospitales,
+                  escuelas, oficinas gubernamentales y otras instituciones, con
+                  un enfoque en la desinfecci&oacute;n y el mantenimiento de
+                  espacios que demandan un alto nivel de higiene. Nos
+                  comprometemos a garantizar ambientes limpios, seguros y
+                  confortables.
+                </p>
+              </div>
+            </div>
+            <!-- End Service Item -->
+          </div>
+        </div>
+      </section>
+      <!-- /Services Section -->
+
+      <!-- Stats Section -->
+      <section id="stats" class="stats section light-background">
+        <div
+          class="container aos-init aos-animate"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          <div class="row gy-4">
+            <div class="col-lg-3 col-md-6">
+              <div class="stats-item">
+                <i class="bi bi-emoji-smile"></i>
+                <span
+                  data-purecounter-start="0"
+                  data-purecounter-end="232"
+                  data-purecounter-duration="0"
+                  class="purecounter"
+                  >232</span
+                >
+                <p>
+                  <strong>Clientes Satisfechos</strong>
+                  <span><br />con nuestros servicios</span>
+                </p>
+              </div>
+            </div>
+            <!-- End Stats Item -->
+
+            <div class="col-lg-3 col-md-6">
+              <div class="stats-item">
+                <i class="bi bi-bucket"></i>
+                <span
+                  data-purecounter-start="0"
+                  data-purecounter-end="520"
+                  data-purecounter-duration="0"
+                  class="purecounter"
+                  >520</span
+                >
+                <p>
+                  <strong>Limpiezas Realizadas</strong>
+                  <span>durante el a&ntilde;o</span>
+                </p>
+              </div>
+            </div>
+            <!-- End Stats Item -->
+
+            <div class="col-lg-3 col-md-6">
+              <div class="stats-item">
+                <i class="bi bi-clock"></i>
+                <span
+                  data-purecounter-start="0"
+                  data-purecounter-end="3120"
+                  data-purecounter-duration="0"
+                  class="purecounter"
+                  >3120</span
+                >
+                <p>
+                  <strong>Horas de Trabajo</strong>
+                  <span><br />en el a&ntilde;o</span>
+                </p>
+              </div>
+            </div>
+            <!-- End Stats Item -->
+
+            <div class="col-lg-3 col-md-6">
+              <div class="stats-item">
+                <i class="bi bi-people"></i>
+                <span
+                  data-purecounter-start="0"
+                  data-purecounter-end="46"
+                  data-purecounter-duration="0"
+                  class="purecounter"
+                  >46</span
+                >
+                <p>
+                  <strong>Trabajadores Involucrados</strong>
+                  <span><br />en las labores de limpieza</span>
+                </p>
+              </div>
+            </div>
+            <!-- End Stats Item -->
+          </div>
+        </div>
+      </section>
+      <!-- /Stats Section -->
+
+      <!-- Call To Action Section -->
+      <section
+        id="call-to-action"
+        class="call-to-action section accent-background"
+      >
+        <img src="assets/img/bgs/hero-bg9.jpg" alt="" />
+
+        <div class="container">
+          <div
+            class="row justify-content-center aos-init aos-animate"
+            data-aos="zoom-in"
+            data-aos-delay="100"
+          >
+            <div class="col-xl-10">
+              <div class="text-center">
+                <h1><strong>Call To Action</strong></h1>
+                <h3>
+                  Cont&aacute;ctanos y solicita un cotizaci&oacute;n de
+                  cualquiera de nuestros servicios
+                </h3>
+                <a class="cta-btn" href="#contact">Call To Action</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /Call To Action Section -->
+
+      <!-- Portfolio Section -->
+      <section id="portfolio" class="portfolio section">
+        <!-- Section Title -->
+        <div
+          class="container section-title aos-init aos-animate"
+          data-aos="fade-up"
+        >
+          <h2>Portafolio</h2>
+          <p>
+            Aqu&iacute; puedes ver ejemplos de nuestro trabajo en acci&oacute;n.
+            Cada imagen muestra la dedicaci&oacute;n y el detalle que ponemos en
+            cada limpieza, asegurando que cada espacio est&eacute; impecable y
+            listo para su uso. Desde oficinas y hogares hasta f&aacute;bricas y
+            hospitales, transformamos los ambientes con un enfoque profesional y
+            personalizado.
+          </p>
+        </div>
+        <!-- End Section Title -->
+
+        <div class="container">
+          <div
+            class="isotope-layout"
+            data-default-filter="*"
+            data-layout="masonry"
+            data-sort="original-order"
+          >
+            <ul
+              class="portfolio-filters isotope-filters aos-init aos-animate"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <li data-filter="*" class="filter-active">Todas</li>
+              <li data-filter=".filter-app">Hogar</li>
+              <li data-filter=".filter-product">Comercial</li>
+              <li data-filter=".filter-branding">Industrial</li>
+              <li data-filter=".filter-books">Institucional</li>
+            </ul>
+            <!-- End Portfolio Filters -->
+
+            <div
+              class="row gy-4 isotope-container aos-init aos-animate"
+              data-aos="fade-up"
+              data-aos-delay="200"
+              style="position: relative; height: 9504.42px"
+            >
+              <div
+                class="row gy-4 isotope-container aos-init aos-animate"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
+                <!-- Block 1-->
+
+                <div
+                  class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app"
+                  style="position: absolute; left: 0px; top: 0px"
+                >
+                  <img
+                    src="assets/img/portfolio/hogar-1.jpg"
+                    class="img-fluid"
+                    alt=""
+                  />
+                  <div class="portfolio-info">
+                    <h4>HOGAR</h4>
+                    <p>Limpieza en Hogares</p>
+                    <a
+                      href="assets/img/portfolio/hogar-1.jpg"
+                      title="App 1"
+                      data-gallery="portfolio-gallery-app"
+                      class="glightbox preview-link"
+                      ><i class="bi bi-zoom-in"></i
+                    ></a>
+                    <a
+                      href="portfolio-details.html"
+                      title="More Details"
+                      class="details-link"
+                      ><i class="bi bi-link-45deg"></i
+                    ></a>
+                  </div>
                 </div>
+                <!-- End Portfolio Item -->
 
+                <div
+                  class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product"
+                  style="position: absolute; left: 0px; top: 368.016px"
+                >
+                  <img
+                    src="assets/img/portfolio/comercial-1.jpg"
+                    class="img-fluid"
+                    alt=""
+                  />
+                  <div class="portfolio-info">
+                    <h4>COMERCIAL</h4>
+                    <p>Limpieza en Oficinas</p>
+                    <a
+                      href="assets/img/portfolio/comercial-1.jpg"
+                      title="Product 1"
+                      data-gallery="portfolio-gallery-product"
+                      class="glightbox preview-link"
+                      ><i class="bi bi-zoom-in"></i
+                    ></a>
+                    <a
+                      href="portfolio-details.html"
+                      title="More Details"
+                      class="details-link"
+                      ><i class="bi bi-link-45deg"></i
+                    ></a>
+                  </div>
+                </div>
+                <!-- End Portfolio Item -->
+
+                <div
+                  class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding"
+                  style="position: absolute; left: 0px; top: 701.61px"
+                >
+                  <img
+                    src="assets/img/portfolio/industrial-1.jpg"
+                    class="img-fluid"
+                    alt=""
+                  />
+                  <div class="portfolio-info">
+                    <h4>INDUSTRIAL</h4>
+                    <p>Limpieza en Industrias</p>
+                    <a
+                      href="assets/img/portfolio/industrial-1.jpg"
+                      title="Branding 1"
+                      data-gallery="portfolio-gallery-branding"
+                      class="glightbox preview-link"
+                      ><i class="bi bi-zoom-in"></i
+                    ></a>
+                    <a
+                      href="portfolio-details.html"
+                      title="More Details"
+                      class="details-link"
+                      ><i class="bi bi-link-45deg"></i
+                    ></a>
+                  </div>
+                </div>
+                <!-- End Portfolio Item -->
+
+                <div
+                  class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books"
+                  style="position: absolute; left: 0px; top: 1069.39px"
+                >
+                  <img
+                    src="assets/img/portfolio/institucional-1.jpg"
+                    class="img-fluid"
+                    alt=""
+                  />
+                  <div class="portfolio-info">
+                    <h4>INSTITUCIONAL</h4>
+                    <p>Limpieza en Instituciones</p>
+                    <a
+                      href="assets/img/portfolio/institucional-1.jpg"
+                      title="Branding 1"
+                      data-gallery="portfolio-gallery-book"
+                      class="glightbox preview-link"
+                      ><i class="bi bi-zoom-in"></i
+                    ></a>
+                    <a
+                      href="portfolio-details.html"
+                      title="More Details"
+                      class="details-link"
+                      ><i class="bi bi-link-45deg"></i
+                    ></a>
+                  </div>
+                </div>
+                <!-- End Portfolio Item -->
+
+                <!-- Block 2 -->
+
+                <div
+                  class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app"
+                  style="position: absolute; left: 0px; top: 1571.09px"
+                >
+                  <img
+                    src="assets/img/portfolio/hogar-2.jpg"
+                    class="img-fluid"
+                    alt=""
+                  />
+                  <div class="portfolio-info">
+                    <h4>HOGAR</h4>
+                    <p>Limpieza en Hogares</p>
+                    <a
+                      href="assets/img/portfolio/hogar-2.jpg"
+                      title="App 2"
+                      data-gallery="portfolio-gallery-app"
+                      class="glightbox preview-link"
+                      ><i class="bi bi-zoom-in"></i
+                    ></a>
+                    <a
+                      href="portfolio-details.html"
+                      title="More Details"
+                      class="details-link"
+                      ><i class="bi bi-link-45deg"></i
+                    ></a>
+                  </div>
+                </div>
+                <!-- End Portfolio Item -->
+
+                <div
+                  class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product"
+                  style="position: absolute; left: 0px; top: 1939.09px"
+                >
+                  <img
+                    src="assets/img/portfolio/comercial-2.jpg"
+                    class="img-fluid"
+                    alt=""
+                  />
+                  <div class="portfolio-info">
+                    <h4>COMERCIAL</h4>
+                    <p>Limpieza en Oficinas</p>
+                    <a
+                      href="assets/img/portfolio/comercial-2.jpg"
+                      title="Product 2"
+                      data-gallery="portfolio-gallery-product"
+                      class="glightbox preview-link"
+                      ><i class="bi bi-zoom-in"></i
+                    ></a>
+                    <a
+                      href="portfolio-details.html"
+                      title="More Details"
+                      class="details-link"
+                      ><i class="bi bi-link-45deg"></i
+                    ></a>
+                  </div>
+                </div>
+                <!-- End Portfolio Item -->
+
+                <div
+                  class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding"
+                  style="position: absolute; left: 0px; top: 2306.94px"
+                >
+                  <img
+                    src="assets/img/portfolio/industrial-2.jpg"
+                    class="img-fluid"
+                    alt=""
+                  />
+                  <div class="portfolio-info">
+                    <h4>INDUSTRIAL</h4>
+                    <p>Limpieza en Industrias</p>
+                    <a
+                      href="assets/img/portfolio/industrial-2.jpg"
+                      title="Branding 2"
+                      data-gallery="portfolio-gallery-branding"
+                      class="glightbox preview-link"
+                      ><i class="bi bi-zoom-in"></i
+                    ></a>
+                    <a
+                      href="portfolio-details.html"
+                      title="More Details"
+                      class="details-link"
+                      ><i class="bi bi-link-45deg"></i
+                    ></a>
+                  </div>
+                </div>
+                <!-- End Portfolio Item -->
+
+                <div
+                  class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books"
+                  style="position: absolute; left: 0px; top: 2623.74px"
+                >
+                  <img
+                    src="assets/img/portfolio/institucional-2.jpg"
+                    class="img-fluid"
+                    alt=""
+                  />
+                  <div class="portfolio-info">
+                    <h4>INSTITUCIONAL</h4>
+                    <p>Limpieza en Instituciones</p>
+                    <a
+                      href="assets/img/portfolio/institucional-2.jpg"
+                      title="Branding 2"
+                      data-gallery="portfolio-gallery-book"
+                      class="glightbox preview-link"
+                      ><i class="bi bi-zoom-in"></i
+                    ></a>
+                    <a
+                      href="portfolio-details.html"
+                      title="More Details"
+                      class="details-link"
+                      ><i class="bi bi-link-45deg"></i
+                    ></a>
+                  </div>
+                </div>
+                <!-- End Portfolio Item -->
+
+                <!-- Block 3 -->
+
+                <div
+                  class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app"
+                  style="position: absolute; left: 0px; top: 2937.99px"
+                >
+                  <img
+                    src="assets/img/portfolio/hogar-3.jpg"
+                    class="img-fluid"
+                    alt=""
+                  />
+                  <div class="portfolio-info">
+                    <h4>HOGAR</h4>
+                    <p>Limpieza en Hogares</p>
+                    <a
+                      href="assets/img/portfolio/hogar-3.jpg"
+                      title="App 3"
+                      data-gallery="portfolio-gallery-app"
+                      class="glightbox preview-link"
+                      ><i class="bi bi-zoom-in"></i
+                    ></a>
+                    <a
+                      href="portfolio-details.html"
+                      title="More Details"
+                      class="details-link"
+                      ><i class="bi bi-link-45deg"></i
+                    ></a>
+                  </div>
+                </div>
+                <!-- End Portfolio Item -->
+
+                <div
+                  class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product"
+                  style="position: absolute; left: 0px; top: 3737.59px"
+                >
+                  <img
+                    src="assets/img/portfolio/comercial-3.jpg"
+                    class="img-fluid"
+                    alt=""
+                  />
+                  <div class="portfolio-info">
+                    <h4>COMERCIAL</h4>
+                    <p>Limpieza en Oficinas</p>
+                    <a
+                      href="assets/img/portfolio/comercial-3.jpg"
+                      title="Product 3"
+                      data-gallery="portfolio-gallery-product"
+                      class="glightbox preview-link"
+                      ><i class="bi bi-zoom-in"></i
+                    ></a>
+                    <a
+                      href="portfolio-details.html"
+                      title="More Details"
+                      class="details-link"
+                      ><i class="bi bi-link-45deg"></i
+                    ></a>
+                  </div>
+                </div>
+                <!-- End Portfolio Item -->
+
+                <div
+                  class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding"
+                  style="position: absolute; left: 0px; top: 4089.74px"
+                >
+                  <img
+                    src="assets/img/portfolio/industrial-3.jpg"
+                    class="img-fluid"
+                    alt=""
+                  />
+                  <div class="portfolio-info">
+                    <h4>INDUSTRIAL</h4>
+                    <p>Limpieza en Industrias</p>
+                    <a
+                      href="assets/img/portfolio/industrial-3.jpg"
+                      title="Branding 2"
+                      data-gallery="portfolio-gallery-branding"
+                      class="glightbox preview-link"
+                      ><i class="bi bi-zoom-in"></i
+                    ></a>
+                    <a
+                      href="portfolio-details.html"
+                      title="More Details"
+                      class="details-link"
+                      ><i class="bi bi-link-45deg"></i
+                    ></a>
+                  </div>
+                </div>
+                <!-- End Portfolio Item -->
+
+                <div
+                  class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books"
+                  style="position: absolute; left: 0px; top: 4423.33px"
+                >
+                  <img
+                    src="assets/img/portfolio/institucional-3.jpg"
+                    class="img-fluid"
+                    alt=""
+                  />
+                  <div class="portfolio-info">
+                    <h4>INSTITUCIONAL</h4>
+                    <p>Limpieza en Instituciones</p>
+                    <a
+                      href="assets/img/portfolio/institucional-3.jpg"
+                      title="Branding 3"
+                      data-gallery="portfolio-gallery-book"
+                      class="glightbox preview-link"
+                      ><i class="bi bi-zoom-in"></i
+                    ></a>
+                    <a
+                      href="portfolio-details.html"
+                      title="More Details"
+                      class="details-link"
+                      ><i class="bi bi-link-45deg"></i
+                    ></a>
+                  </div>
+                </div>
+                <!-- End Portfolio Item -->
+
+                <!-- Block 4 -->
+
+                <div
+                  class="row gy-4 isotope-container aos-init aos-animate"
+                  data-aos="fade-up"
+                  data-aos-delay="200"
+                >
+                  <div
+                    class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app"
+                    style="position: absolute; left: 0px; top: 4791.33px"
+                  >
+                    <img
+                      src="assets/img/portfolio/hogar-4.jpg"
+                      class="img-fluid"
+                      alt=""
+                    />
+                    <div class="portfolio-info">
+                      <h4>HOGAR</h4>
+                      <p>Limpieza en Hogares</p>
+                      <a
+                        href="assets/img/portfolio/hogar-4.jpg"
+                        title="App 1"
+                        data-gallery="portfolio-gallery-app"
+                        class="glightbox preview-link"
+                        ><i class="bi bi-zoom-in"></i
+                      ></a>
+                      <a
+                        href="portfolio-details.html"
+                        title="More Details"
+                        class="details-link"
+                        ><i class="bi bi-link-45deg"></i
+                      ></a>
+                    </div>
+                  </div>
+                  <!-- End Portfolio Item -->
+
+                  <div
+                    class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product"
+                    style="position: absolute; left: 0px; top: 5589.25px"
+                  >
+                    <img
+                      src="assets/img/portfolio/comercial-4.jpg"
+                      class="img-fluid"
+                      alt=""
+                    />
+                    <div class="portfolio-info">
+                      <h4>COMERCIAL</h4>
+                      <p>Limpieza en Oficinas</p>
+                      <a
+                        href="assets/img/portfolio/comercial-4.jpg"
+                        title="Product 1"
+                        data-gallery="portfolio-gallery-product"
+                        class="glightbox preview-link"
+                        ><i class="bi bi-zoom-in"></i
+                      ></a>
+                      <a
+                        href="portfolio-details.html"
+                        title="More Details"
+                        class="details-link"
+                        ><i class="bi bi-link-45deg"></i
+                      ></a>
+                    </div>
+                  </div>
+                  <!-- End Portfolio Item -->
+
+                  <div
+                    class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding"
+                    style="position: absolute; left: 0px; top: 5903.58px"
+                  >
+                    <img
+                      src="assets/img/portfolio/industrial-4.jpg"
+                      class="img-fluid"
+                      alt=""
+                    />
+                    <div class="portfolio-info">
+                      <h4>INDUSTRIAL</h4>
+                      <p>Limpieza en Industrias</p>
+                      <a
+                        href="assets/img/portfolio/industrial-4.jpg"
+                        title="Branding 1"
+                        data-gallery="portfolio-gallery-branding"
+                        class="glightbox preview-link"
+                        ><i class="bi bi-zoom-in"></i
+                      ></a>
+                      <a
+                        href="portfolio-details.html"
+                        title="More Details"
+                        class="details-link"
+                        ><i class="bi bi-link-45deg"></i
+                      ></a>
+                    </div>
+                  </div>
+                  <!-- End Portfolio Item -->
+
+                  <div
+                    class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books"
+                    style="position: absolute; left: 0px; top: 6234.22px"
+                  >
+                    <img
+                      src="assets/img/portfolio/institucional-4.jpg"
+                      class="img-fluid"
+                      alt=""
+                    />
+                    <div class="portfolio-info">
+                      <h4>INSTITUCIONAL</h4>
+                      <p>Limpieza en Instituciones</p>
+                      <a
+                        href="assets/img/portfolio/institucional-4.jpg"
+                        title="Branding 1"
+                        data-gallery="portfolio-gallery-book"
+                        class="glightbox preview-link"
+                        ><i class="bi bi-zoom-in"></i
+                      ></a>
+                      <a
+                        href="portfolio-details.html"
+                        title="More Details"
+                        class="details-link"
+                        ><i class="bi bi-link-45deg"></i
+                      ></a>
+                    </div>
+                  </div>
+                  <!-- End Portfolio Item -->
+
+                  <!-- Block 5 -->
+
+                  <div
+                    class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app"
+                    style="position: absolute; left: 0px; top: 6602.22px"
+                  >
+                    <img
+                      src="assets/img/portfolio/hogar-5.jpg"
+                      class="img-fluid"
+                      alt=""
+                    />
+                    <div class="portfolio-info">
+                      <h4>HOGAR</h4>
+                      <p>Limpieza en Hogares</p>
+                      <a
+                        href="assets/img/portfolio/hogar-5.jpg"
+                        title="App 2"
+                        data-gallery="portfolio-gallery-app"
+                        class="glightbox preview-link"
+                        ><i class="bi bi-zoom-in"></i
+                      ></a>
+                      <a
+                        href="portfolio-details.html"
+                        title="More Details"
+                        class="details-link"
+                        ><i class="bi bi-link-45deg"></i
+                      ></a>
+                    </div>
+                  </div>
+                  <!-- End Portfolio Item -->
+
+                  <div
+                    class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product"
+                    style="position: absolute; left: 0px; top: 6963.5px"
+                  >
+                    <img
+                      src="assets/img/portfolio/comercial-5.jpg"
+                      class="img-fluid"
+                      alt=""
+                    />
+                    <div class="portfolio-info">
+                      <h4>COMERCIAL</h4>
+                      <p>Limpieza en Oficinas</p>
+                      <a
+                        href="assets/img/portfolio/comercial-5.jpg"
+                        title="Product 2"
+                        data-gallery="portfolio-gallery-product"
+                        class="glightbox preview-link"
+                        ><i class="bi bi-zoom-in"></i
+                      ></a>
+                      <a
+                        href="portfolio-details.html"
+                        title="More Details"
+                        class="details-link"
+                        ><i class="bi bi-link-45deg"></i
+                      ></a>
+                    </div>
+                  </div>
+                  <!-- End Portfolio Item -->
+
+                  <div
+                    class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding"
+                    style="position: absolute; left: 0px; top: 7331.5px"
+                  >
+                    <img
+                      src="assets/img/portfolio/industrial-5.jpg"
+                      class="img-fluid"
+                      alt=""
+                    />
+                    <div class="portfolio-info">
+                      <h4>INDUSTRIAL</h4>
+                      <p>Limpieza en Industrias</p>
+                      <a
+                        href="assets/img/portfolio/industrial-5.jpg"
+                        title="Branding 2"
+                        data-gallery="portfolio-gallery-branding"
+                        class="glightbox preview-link"
+                        ><i class="bi bi-zoom-in"></i
+                      ></a>
+                      <a
+                        href="portfolio-details.html"
+                        title="More Details"
+                        class="details-link"
+                        ><i class="bi bi-link-45deg"></i
+                      ></a>
+                    </div>
+                  </div>
+                  <!-- End Portfolio Item -->
+
+                  <div
+                    class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books"
+                    style="position: absolute; left: 0px; top: 7664.23px"
+                  >
+                    <img
+                      src="assets/img/portfolio/institucional-5.jpg"
+                      class="img-fluid"
+                      alt=""
+                    />
+                    <div class="portfolio-info">
+                      <h4>INSTITUCIONAL</h4>
+                      <p>Limpieza en Instituciones</p>
+                      <a
+                        href="assets/img/portfolio/institucional-5.jpg"
+                        title="Branding 2"
+                        data-gallery="portfolio-gallery-book"
+                        class="glightbox preview-link"
+                        ><i class="bi bi-zoom-in"></i
+                      ></a>
+                      <a
+                        href="portfolio-details.html"
+                        title="More Details"
+                        class="details-link"
+                        ><i class="bi bi-link-45deg"></i
+                      ></a>
+                    </div>
+                  </div>
+                  <!-- End Portfolio Item -->
+
+                  <!-- Block 6 -->
+
+                  <div
+                    class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app"
+                    style="position: absolute; left: 0px; top: 8032.23px"
+                  >
+                    <img
+                      src="assets/img/portfolio/hogar-6.jpg"
+                      class="img-fluid"
+                      alt=""
+                    />
+                    <div class="portfolio-info">
+                      <h4>HOGAR</h4>
+                      <p>Limpieza en Hogares</p>
+                      <a
+                        href="assets/img/portfolio/hogar-6.jpg"
+                        title="App 3"
+                        data-gallery="portfolio-gallery-app"
+                        class="glightbox preview-link"
+                        ><i class="bi bi-zoom-in"></i
+                      ></a>
+                      <a
+                        href="portfolio-details.html"
+                        title="More Details"
+                        class="details-link"
+                        ><i class="bi bi-link-45deg"></i
+                      ></a>
+                    </div>
+                  </div>
+                  <!-- End Portfolio Item -->
+
+                  <div
+                    class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product"
+                    style="position: absolute; left: 0px; top: 8400.25px"
+                  >
+                    <img
+                      src="assets/img/portfolio/comercial-6.jpg"
+                      class="img-fluid"
+                      alt=""
+                    />
+                    <div class="portfolio-info">
+                      <h4>COMERCIAL</h4>
+                      <p>Limpieza en Oficinas</p>
+                      <a
+                        href="assets/img/portfolio/comercial-6.jpg"
+                        title="Product 3"
+                        data-gallery="portfolio-gallery-product"
+                        class="glightbox preview-link"
+                        ><i class="bi bi-zoom-in"></i
+                      ></a>
+                      <a
+                        href="portfolio-details.html"
+                        title="More Details"
+                        class="details-link"
+                        ><i class="bi bi-link-45deg"></i
+                      ></a>
+                    </div>
+                  </div>
+                  <!-- End Portfolio Item -->
+
+                  <div
+                    class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding"
+                    style="position: absolute; left: 0px; top: 8768.25px"
+                  >
+                    <img
+                      src="assets/img/portfolio/industrial-6.jpg"
+                      class="img-fluid"
+                      alt=""
+                    />
+                    <div class="portfolio-info">
+                      <h4>INDUSTRIAL</h4>
+                      <p>Limpieza en Industrias</p>
+                      <a
+                        href="assets/img/portfolio/industrial-6.jpg"
+                        title="Branding 2"
+                        data-gallery="portfolio-gallery-branding"
+                        class="glightbox preview-link"
+                        ><i class="bi bi-zoom-in"></i
+                      ></a>
+                      <a
+                        href="portfolio-details.html"
+                        title="More Details"
+                        class="details-link"
+                        ><i class="bi bi-link-45deg"></i
+                      ></a>
+                    </div>
+                  </div>
+                  <!-- End Portfolio Item -->
+
+                  <div
+                    class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books"
+                    style="position: absolute; left: 0px; top: 9136.42px"
+                  >
+                    <img
+                      src="assets/img/portfolio/institucional-6.jpg"
+                      class="img-fluid"
+                      alt=""
+                    />
+                    <div class="portfolio-info">
+                      <h4>INSTITUCIONAL</h4>
+                      <p>Limpieza en Instituciones</p>
+                      <a
+                        href="assets/img/portfolio/institucional-6.jpg"
+                        title="Branding 3"
+                        data-gallery="portfolio-gallery-book"
+                        class="glightbox preview-link"
+                        ><i class="bi bi-zoom-in"></i
+                      ></a>
+                      <a
+                        href="portfolio-details.html"
+                        title="More Details"
+                        class="details-link"
+                        ><i class="bi bi-link-45deg"></i
+                      ></a>
+                    </div>
+                  </div>
+                  <!-- End Portfolio Item -->
+                </div>
+                <!-- End Portfolio Container -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /Portfolio Section -->
+
+      <!-- Testimonials Section -->
+      <section id="testimonials" class="testimonials section dark-background">
+        <img
+          src="assets/img/bgs/testimonials-bg.png"
+          class="testimonials-bg"
+          alt=""
+        />
+
+        <div
+          class="container aos-init aos-animate"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          <div
+            class="swiper init-swiper swiper-initialized swiper-horizontal swiper-backface-hidden"
+          >
+            <script type="application/json" class="swiper-config">
+              {
+                "loop": true,
+                "speed": 600,
+                "autoplay": {
+                  "delay": 5000
+                },
+                "slidesPerView": "auto",
+                "pagination": {
+                  "el": ".swiper-pagination",
+                  "type": "bullets",
+                  "clickable": true
+                }
+              }
+            </script>
+            <div
+              class="swiper-wrapper"
+              id="swiper-wrapper-16ba653f0be07fd3"
+              aria-live="off"
+              style="
+                transition-duration: 600ms;
+                transform: translate3d(-516px, 0px, 0px);
+              "
+            >
+              <div
+                class="swiper-slide swiper-slide-prev"
+                role="group"
+                aria-label="1 / 5"
+                data-swiper-slide-index="0"
+              >
+                <div class="testimonial-item">
+                  <img
+                    src="assets/img/testimonials/testimonials-1.jpg"
+                    class="testimonial-img"
+                    alt=""
+                  />
+                  <h3>Laia Garc&iacute;a</h3>
+                  <h4>Gerente de una Tienda</h4>
+                  <div class="stars">
+                    <i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i>
+                  </div>
+                  <p>
+                    <i class="bi bi-quote quote-icon-left"></i>
+                    <span
+                      >Edilsa asegura que mi local est&eacute; siempre perfecto
+                      para los clientes. La atenci&oacute;n al detalle es
+                      inigualable.</span
+                    >
+                    <i class="bi bi-quote quote-icon-right"></i>
+                  </p>
+                </div>
+              </div>
+              <!-- End testimonial item -->
+
+              <div
+                class="swiper-slide swiper-slide-active"
+                role="group"
+                aria-label="2 / 5"
+                data-swiper-slide-index="1"
+              >
+                <div class="testimonial-item">
+                  <img
+                    src="assets/img/testimonials/testimonials-2.jpg"
+                    class="testimonial-img"
+                    alt=""
+                  />
+                  <h3>Jordi Mart&iacute;nez</h3>
+                  <h4>Propietario de una Vivienda</h4>
+                  <div class="stars">
+                    <i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i>
+                  </div>
+                  <p>
+                    <i class="bi bi-quote quote-icon-left"></i>
+                    <span
+                      >Gracias a Edilsa, mi hogar siempre est&aacute; impecable
+                      y fresco. Un servicio de confianza y calidad.</span
+                    >
+                    <i class="bi bi-quote quote-icon-right"></i>
+                  </p>
+                </div>
+              </div>
+              <!-- End testimonial item -->
+
+              <div
+                class="swiper-slide swiper-slide-next"
+                role="group"
+                aria-label="3 / 5"
+                data-swiper-slide-index="2"
+              >
+                <div class="testimonial-item">
+                  <img
+                    src="assets/img/testimonials/testimonials-3.jpg"
+                    class="testimonial-img"
+                    alt=""
+                  />
+                  <h3>Marta Soler</h3>
+                  <h4>Directora de una Escuela</h4>
+                  <div class="stars">
+                    <i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i>
+                  </div>
+                  <p>
+                    <i class="bi bi-quote quote-icon-left"></i>
+                    <span
+                      >Gracias a Edilsa, nuestras instalaciones se mantienen
+                      impecables, lo que garantiza un entorno seguro para
+                      nuestros estudiantes.</span
+                    >
+                    <i class="bi bi-quote quote-icon-right"></i>
+                  </p>
+                </div>
+              </div>
+              <!-- End testimonial item -->
+
+              <div
+                class="swiper-slide"
+                role="group"
+                aria-label="4 / 5"
+                data-swiper-slide-index="3"
+              >
+                <div class="testimonial-item">
+                  <img
+                    src="assets/img/testimonials/testimonials-4.jpg"
+                    class="testimonial-img"
+                    alt=""
+                  />
+                  <h3>Pau Fern&aacute;ndez</h3>
+                  <h4>Supervisor de una Planta Industrial</h4>
+                  <div class="stars">
+                    <i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i>
+                  </div>
+                  <p>
+                    <i class="bi bi-quote quote-icon-left"></i>
+                    <span
+                      >El equipo de Edilsa Álves cumple con los
+                      est&aacute;ndares m&aacute;s altos de seguridad e higiene
+                      en nuestra f&aacute;brica. Un servicio excelente.</span
+                    >
+                    <i class="bi bi-quote quote-icon-right"></i>
+                  </p>
+                </div>
+              </div>
+              <!-- End testimonial item -->
+
+              <div
+                class="swiper-slide"
+                role="group"
+                aria-label="5 / 5"
+                data-swiper-slide-index="4"
+              >
+                <div class="testimonial-item">
+                  <img
+                    src="assets/img/testimonials/testimonials-5.jpg"
+                    class="testimonial-img"
+                    alt=""
+                  />
+                  <h3>N&uacute;ria Vidal</h3>
+                  <h4>Abogada de un Despacho</h4>
+                  <div class="stars">
+                    <i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i>
+                  </div>
+                  <p>
+                    <i class="bi bi-quote quote-icon-left"></i>
+                    <span
+                      >Edilsa nos ha permitido mantener un ambiente de trabajo
+                      limpio y profesional, lo que mejora la productividad de
+                      nuestro equipo.</span
+                    >
+                    <i class="bi bi-quote quote-icon-right"></i>
+                  </p>
+                </div>
+              </div>
+              <!-- End testimonial item -->
+            </div>
+            <div
+              class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal"
+            >
+              <span
+                class="swiper-pagination-bullet"
+                tabindex="0"
+                role="button"
+                aria-label="Go to slide 1"
+              ></span
+              ><span
+                class="swiper-pagination-bullet swiper-pagination-bullet-active"
+                tabindex="0"
+                role="button"
+                aria-label="Go to slide 2"
+                aria-current="true"
+              ></span
+              ><span
+                class="swiper-pagination-bullet"
+                tabindex="0"
+                role="button"
+                aria-label="Go to slide 3"
+              ></span
+              ><span
+                class="swiper-pagination-bullet"
+                tabindex="0"
+                role="button"
+                aria-label="Go to slide 4"
+              ></span
+              ><span
+                class="swiper-pagination-bullet"
+                tabindex="0"
+                role="button"
+                aria-label="Go to slide 5"
+              ></span>
+            </div>
+            <span
+              class="swiper-notification"
+              aria-live="assertive"
+              aria-atomic="true"
+            ></span
+            ><span
+              class="swiper-notification"
+              aria-live="assertive"
+              aria-atomic="true"
+            ></span
+            ><span
+              class="swiper-notification"
+              aria-live="assertive"
+              aria-atomic="true"
+            ></span
+            ><span
+              class="swiper-notification"
+              aria-live="assertive"
+              aria-atomic="true"
+            ></span
+            ><span
+              class="swiper-notification"
+              aria-live="assertive"
+              aria-atomic="true"
+            ></span
+            ><span
+              class="swiper-notification"
+              aria-live="assertive"
+              aria-atomic="true"
+            ></span
+            ><span
+              class="swiper-notification"
+              aria-live="assertive"
+              aria-atomic="true"
+            ></span
+            ><span
+              class="swiper-notification"
+              aria-live="assertive"
+              aria-atomic="true"
+            ></span>
+            <span
+              class="swiper-notification"
+              aria-live="assertive"
+              aria-atomic="true"
+            ></span
+            ><span
+              class="swiper-notification"
+              aria-live="assertive"
+              aria-atomic="true"
+            ></span
+            ><span
+              class="swiper-notification"
+              aria-live="assertive"
+              aria-atomic="true"
+            ></span
+            ><span
+              class="swiper-notification"
+              aria-live="assertive"
+              aria-atomic="true"
+            ></span
+            ><span
+              class="swiper-notification"
+              aria-live="assertive"
+              aria-atomic="true"
+            ></span
+            ><span
+              class="swiper-notification"
+              aria-live="assertive"
+              aria-atomic="true"
+            ></span
+            ><span
+              class="swiper-notification"
+              aria-live="assertive"
+              aria-atomic="true"
+            ></span
+            ><span
+              class="swiper-notification"
+              aria-live="assertive"
+              aria-atomic="true"
+            ></span
+            ><span
+              class="swiper-notification"
+              aria-live="assertive"
+              aria-atomic="true"
+            ></span
+            ><span
+              class="swiper-notification"
+              aria-live="assertive"
+              aria-atomic="true"
+            ></span
+            ><span
+              class="swiper-notification"
+              aria-live="assertive"
+              aria-atomic="true"
+            ></span
+            ><span
+              class="swiper-notification"
+              aria-live="assertive"
+              aria-atomic="true"
+            ></span
+            ><span
+              class="swiper-notification"
+              aria-live="assertive"
+              aria-atomic="true"
+            ></span>
+          </div>
+        </div>
+      </section>
+      <!-- /Testimonials Section -->
+
+      <!-- Team Section -->
+      <section id="team" class="team section">
+        <!-- Section Title -->
+        <div
+          class="container section-title aos-init aos-animate"
+          data-aos="fade-up"
+        >
+          <h2>Equipo</h2>
+          <p>
+            Sabemos que nuestro mayor recurso es nuestro equipo. Contamos con un
+            grupo de profesionales comprometidos, altamente capacitados y con
+            una amplia experiencia en el sector de la limpieza. Cada miembro de
+            nuestro equipo comparte los valores fundamentales de la empresa:
+            profesionalismo, calidad, confianza y sostenibilidad.
+          </p>
+        </div>
+        <!-- End Section Title -->
+
+        <div
+          class="container aos-init aos-animate"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          <div class="row gy-5">
+            <div
+              class="col-lg-4 col-md-6 member aos-init aos-animate"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <div class="member-img">
+                <img
+                  src="assets/img/team/team-1.jpg"
+                  class="img-fluid"
+                  alt=""
+                />
+                <div class="social">
+                  <a href="#"><i class="bi bi-twitter-x"></i></a>
+                  <a href="#"><i class="bi bi-facebook"></i></a>
+                  <a href="#"><i class="bi bi-instagram"></i></a>
+                  <a href="#"><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info text-center">
+                <h4>Manuel Garc&iacute;a</h4>
+                <span>Director General (CEO)</span>
+                <p>
+                  Responsable de la estrategia y la visi&oacute;n global de la
+                  empresa, supervisando todas las operaciones.
+                </p>
+              </div>
+            </div>
+            <!-- End Team Member -->
+
+            <div
+              class="col-lg-4 col-md-6 member aos-init aos-animate"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <div class="member-img">
+                <img
+                  src="assets/img/team/team-2.jpg"
+                  class="img-fluid"
+                  alt=""
+                />
+                <div class="social">
+                  <a href="#"><i class="bi bi-twitter-x"></i></a>
+                  <a href="#"><i class="bi bi-facebook"></i></a>
+                  <a href="#"><i class="bi bi-instagram"></i></a>
+                  <a href="#"><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info text-center">
+                <h4>Laura P&eacute;rez</h4>
+                <span>Directora de Operaciones (COO)</span>
+                <p>
+                  Encargada de supervisar las operaciones diarias de limpieza y
+                  la coordinaci&oacute;n de los equipos en los diferentes
+                  proyectos.
+                </p>
+              </div>
+            </div>
+            <!-- End Team Member -->
+
+            <div
+              class="col-lg-4 col-md-6 member aos-init"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              <div class="member-img">
+                <img
+                  src="assets/img/team/team-3.jpg"
+                  class="img-fluid"
+                  alt=""
+                />
+                <div class="social">
+                  <a href="#"><i class="bi bi-twitter-x"></i></a>
+                  <a href="#"><i class="bi bi-facebook"></i></a>
+                  <a href="#"><i class="bi bi-instagram"></i></a>
+                  <a href="#"><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info text-center">
+                <h4>Javier Mart&iacute;nez</h4>
+                <span>Director Comercial</span>
+                <p>
+                  Responsable de la gesti&oacute;n de las relaciones con los
+                  clientes, la captaci&oacute;n de nuevos negocios y la
+                  expansi&oacute;n de los servicios.
+                </p>
+              </div>
+            </div>
+            <!-- End Team Member -->
+
+            <div
+              class="col-lg-4 col-md-6 member aos-init"
+              data-aos="fade-up"
+              data-aos-delay="400"
+            >
+              <div class="member-img">
+                <img
+                  src="assets/img/team/team-4.jpg"
+                  class="img-fluid"
+                  alt=""
+                />
+                <div class="social">
+                  <a href="#"><i class="bi bi-twitter-x"></i></a>
+                  <a href="#"><i class="bi bi-facebook"></i></a>
+                  <a href="#"><i class="bi bi-instagram"></i></a>
+                  <a href="#"><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info text-center">
+                <h4>Elena S&aacute;nchez</h4>
+                <span>Directora de Recursos Humanos</span>
+                <p>
+                  Dirige la contrataci&oacute;n, formaci&oacute;n y
+                  gesti&oacute;n del personal, asegurando que el equipo
+                  est&eacute; motivado.
+                </p>
+              </div>
+            </div>
+            <!-- End Team Member -->
+
+            <div
+              class="col-lg-4 col-md-6 member aos-init"
+              data-aos="fade-up"
+              data-aos-delay="500"
+            >
+              <div class="member-img">
+                <img
+                  src="assets/img/team/team-5.jpg"
+                  class="img-fluid"
+                  alt=""
+                />
+                <div class="social">
+                  <a href="#"><i class="bi bi-twitter-x"></i></a>
+                  <a href="#"><i class="bi bi-facebook"></i></a>
+                  <a href="#"><i class="bi bi-instagram"></i></a>
+                  <a href="#"><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info text-center">
+                <h4>Carlos Fern&aacute;ndez</h4>
+                <span>Director de Marketing</span>
+                <p>
+                  Encargado de la promoci&oacute;n de la marca, la
+                  creaci&oacute;n de campa&ntilde;as publicitarias y el
+                  desarrollo de estrategias para nuevos clientes.
+                </p>
+              </div>
+            </div>
+            <!-- End Team Member -->
+
+            <div
+              class="col-lg-4 col-md-6 member aos-init"
+              data-aos="fade-up"
+              data-aos-delay="600"
+            >
+              <div class="member-img">
+                <img
+                  src="assets/img/team/team-6.jpg"
+                  class="img-fluid"
+                  alt=""
+                />
+                <div class="social">
+                  <a href="#"><i class="bi bi-twitter-x"></i></a>
+                  <a href="#"><i class="bi bi-facebook"></i></a>
+                  <a href="#"><i class="bi bi-instagram"></i></a>
+                  <a href="#"><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info text-center">
+                <h4>Isabel L&oacute;pez</h4>
+                <span>Directora Financiera (CFO)</span>
+                <p>
+                  Responsable de la planificaci&oacute;n financiera, control de
+                  presupuestos y gesti&oacute;n de los recursos
+                  econ&oacute;micos.
+                </p>
+              </div>
+            </div>
+            <!-- End Team Member -->
+          </div>
+        </div>
+      </section>
+      <!-- /Team Section -->
+
+      <!-- Pricing Section -->
+      <section id="pricing" class="pricing section">
+        <!-- Section Title -->
+        <div class="container section-title aos-init" data-aos="fade-up">
+          <h2>Precios</h2>
+          <p>
+            Ofrecemos planes de limpieza adaptados a tus necesidades y
+            presupuesto. Ya sea para un servicio puntual o regular, garantizamos
+            calidad, personal capacitado y el uso de productos
+            ecol&oacute;gicos. Elige el plan perfecto para ti y disfruta de un
+            espacio impecable.
+          </p>
+        </div>
+        <!-- End Section Title -->
+
+        <div class="container">
+          <div class="row gy-4">
+            <div
+              class="col-lg-4 aos-init"
+              data-aos="zoom-in"
+              data-aos-delay="100"
+            >
+              <div class="pricing-item">
+                <h3>Plan B&Aacute;SICO</h3>
+                <h4><sup>&euro;</sup>99<span> / mes</span></h4>
+                <ul>
+                  <li>
+                    <i class="bi bi-check"></i> <span>1 limpieza semanal</span>
+                  </li>
+                  <li>
+                    <i class="bi bi-check"></i>
+                    <span>Ideal para hogares o peque&ntilde;as oficinas</span>
+                  </li>
+                  <li>
+                    <i class="bi bi-check"></i>
+                    <span>Uso de productos de limpieza ecol&oacute;gicos</span>
+                  </li>
+                  <li>
+                    <i class="bi bi-check"></i> <span>Personal capacitado</span>
+                  </li>
+                  <li>
+                    <i class="bi bi-check"></i>
+                    <span
+                      >Atenci&oacute;n a &aacute;reas comunes y superficies
+                      generales</span
+                    >
+                  </li>
+                </ul>
+                <a href="#" class="buy-btn">Comprar Ahora</a>
+              </div>
+            </div>
+            <!-- End Pricing Item -->
+
+            <div
+              class="col-lg-4 aos-init"
+              data-aos="zoom-in"
+              data-aos-delay="200"
+            >
+              <div class="pricing-item featured">
+                <h3>Plan EST&Aacute;NDAR</h3>
+                <h4><sup>&euro;</sup>199<span> / mes</span></h4>
+                <ul>
+                  <li>
+                    <i class="bi bi-check"></i>
+                    <span>2 limpiezas semanales</span>
+                  </li>
+                  <li>
+                    <i class="bi bi-check"></i>
+                    <span
+                      >Recomendado para oficinas medianas y locales
+                      comerciales</span
+                    >
+                  </li>
+                  <li>
+                    <i class="bi bi-check"></i>
+                    <span
+                      >Limpieza profunda de &aacute;reas comunes y
+                      espec&iacute;ficas</span
+                    >
+                  </li>
+                  <li>
+                    <i class="bi bi-check"></i>
+                    <span
+                      >Uso de productos ecol&oacute;gicos especializados</span
+                    >
+                  </li>
+                  <li>
+                    <i class="bi bi-check"></i>
+                    <span>Supervisi&oacute;n peri&oacute;dica de calidad</span>
+                  </li>
+                </ul>
+                <a href="#" class="buy-btn">Comprar Ahora</a>
+              </div>
+            </div>
+            <!-- End Pricing Item -->
+
+            <div
+              class="col-lg-4 aos-init"
+              data-aos="zoom-in"
+              data-aos-delay="300"
+            >
+              <div class="pricing-item">
+                <h3>Plan PREMIUM</h3>
+                <h4><sup>&euro;</sup>299<span> / mes</span></h4>
+                <ul>
+                  <li>
+                    <i class="bi bi-check"></i>
+                    <span>3 limpiezas semanales o servicio personalizado</span>
+                  </li>
+                  <li>
+                    <i class="bi bi-check"></i>
+                    <span
+                      >Ideal para grandes oficinas, industrias o
+                      instituciones</span
+                    >
+                  </li>
+                  <li>
+                    <i class="bi bi-check"></i>
+                    <span
+                      >Limpieza especializada de &aacute;reas dif&iacute;ciles
+                      (ventanas, techos, etc.)</span
+                    >
+                  </li>
+                  <li>
+                    <i class="bi bi-check"></i>
+                    <span>Desinfecci&oacute;n completa de espacios</span>
+                  </li>
+                  <li>
+                    <i class="bi bi-check"></i>
+                    <span>Soporte y atenci&oacute;n preferencial</span>
+                  </li>
+                </ul>
+                <a href="#" class="buy-btn">Comprar Ahora</a>
+              </div>
+            </div>
+            <!-- End Pricing Item -->
+          </div>
+        </div>
+      </section>
+      <!-- /Pricing Section -->
+
+      <!-- Faq Section -->
+      <section id="faq" class="faq section light-background">
+        <!-- Section Title -->
+        <div class="container section-title aos-init" data-aos="fade-up">
+          <h2>Preguntas Frecuentes (FAQs)</h2>
+          <p>
+            Sabemos que puedes tener preguntas sobre nuestros servicios de
+            limpieza. Para facilitarte las respuestas, hemos reunido las
+            preguntas m&aacute;s frecuentes de nuestros clientes. Si no
+            encuentras lo que buscas, no dudes en contactarnos. &iexcl;Estamos
+            aqu&iacute; para ayudarte!
+          </p>
+        </div>
+        <!-- End Section Title -->
+
+        <div class="container">
+          <div
+            class="row faq-item aos-init"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="col-lg-5 d-flex">
+              <i class="bi bi-question-circle"></i>
+              <h4>
+                1. &iquest;Qu&eacute; tipo de servicios de limpieza ofrecen?
+              </h4>
+            </div>
+            <div class="col-lg-7">
+              <p>
+                Ofrecemos una amplia gama de servicios de limpieza, que incluyen
+                limpiezas para hogares, oficinas, locales comerciales,
+                instalaciones industriales y entidades institucionales. Nos
+                adaptamos a las necesidades espec&iacute;ficas de cada cliente,
+                garantizando un entorno limpio y saludable.
+              </p>
+            </div>
+          </div>
+          <!-- End F.A.Q Item-->
+
+          <div
+            class="row faq-item aos-init"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="col-lg-5 d-flex">
+              <i class="bi bi-question-circle"></i>
+              <h4>
+                2. &iquest;Utilizan productos de limpieza ecol&oacute;gicos?
+              </h4>
+            </div>
+            <div class="col-lg-7">
+              <p>
+                S&iacute;, nos comprometemos con el cuidado del medio ambiente.
+                Utilizamos productos de limpieza ecol&oacute;gicos y seguros,
+                que no solo garantizan una limpieza efectiva, sino
+                tambi&eacute;n la protecci&oacute;n de tu salud y la del
+                entorno.
+              </p>
+            </div>
+          </div>
+          <!-- End F.A.Q Item-->
+
+          <div
+            class="row faq-item aos-init"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="col-lg-5 d-flex">
+              <i class="bi bi-question-circle"></i>
+              <h4>
+                3. &iquest;C&oacute;mo puedo contratar un servicio de limpieza?
+              </h4>
+            </div>
+            <div class="col-lg-7">
+              <p>
+                Puedes contratar nuestros servicios f&aacute;cilmente a
+                trav&eacute;s de nuestro sitio web completando el formulario de
+                contacto, o bien, llamando a nuestro n&uacute;mero de
+                atenci&oacute;n al cliente. Tambi&eacute;n respondemos a
+                solicitudes por correo electr&oacute;nico, y te ayudaremos a
+                encontrar el plan adecuado para ti.
+              </p>
+            </div>
+          </div>
+          <!-- End F.A.Q Item-->
+
+          <div
+            class="row faq-item aos-init"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <div class="col-lg-5 d-flex">
+              <i class="bi bi-question-circle"></i>
+              <h4>
+                4. &iquest;Ofrecen servicios personalizados seg&uacute;n las
+                necesidades?
+              </h4>
+            </div>
+            <div class="col-lg-7">
+              <p>
+                S&iacute;, en Net i Clar personalizamos nuestros servicios de
+                limpieza seg&uacute;n tus necesidades. Ya sea que necesites
+                limpiezas puntuales, mantenimiento regular o servicios
+                especializados, trabajamos contigo para adaptar nuestros planes
+                a tus requerimientos.
+              </p>
+            </div>
+          </div>
+          <!-- End F.A.Q Item-->
+
+          <div
+            class="row faq-item aos-init"
+            data-aos="fade-up"
+            data-aos-delay="500"
+          >
+            <div class="col-lg-5 d-flex">
+              <i class="bi bi-question-circle"></i>
+              <h4>5. &iquest;Qu&eacute; &aacute;reas cubren sus servicios?</h4>
+            </div>
+            <div class="col-lg-7">
+              <p>
+                Ofrecemos nuestros servicios de limpieza en toda la
+                regi&oacute;n de Tarragona y &aacute;reas cercanas. Atendemos
+                tanto a clientes residenciales como a empresas y organizaciones
+                en los sectores comercial, industrial e institucional.
+              </p>
+            </div>
+          </div>
+          <!-- End F.A.Q Item-->
+        </div>
+      </section>
+      <!-- /Faq Section -->
+
+      <!-- Contact Section -->
+      <section id="contact" class="contact section">
+        <!-- Section Title -->
+        <div class="container section-title aos-init" data-aos="fade-up">
+          <h2>Contacto</h2>
+          <p>
+            Estamos aqu&iacute; para ayudarte con cualquier consulta o solicitud
+            de nuestros servicios de limpieza. No dudes en ponerte en contacto
+            con nosotros para recibir m&aacute;s informaci&oacute;n, solicitar
+            un presupuesto personalizado o agendar una cita. &iexcl;Nuestro
+            equipo estar&aacute; encantado de atenderte!
+          </p>
+        </div>
+        <!-- End Section Title -->
+
+        <div class="container aos-init" data-aos="fade-up" data-aos-delay="100">
+          <div class="row gy-4">
+            <div class="col-lg-5">
+              <div class="info-wrap">
+                <div
+                  class="info-item d-flex aos-init"
+                  data-aos="fade-up"
+                  data-aos-delay="200"
+                >
+                  <i class="bi bi-geo-alt flex-shrink-0"></i>
+                  <div>
+                    <h3>Direcci&oacute;n</h3>
+                    <p>Carrer de la Pau, 15, 43001 Tarragona, Espa&ntilde;a</p>
+                  </div>
+                </div>
+                <!-- End Info Item -->
+
+                <div
+                  class="info-item d-flex aos-init"
+                  data-aos="fade-up"
+                  data-aos-delay="300"
+                >
+                  <i class="bi bi-telephone flex-shrink-0"></i>
+                  <div>
+                    <h3>Tel&eacute;fonos</h3>
+                    <p>+34 977 123 456 / +34 612 345 678</p>
+                  </div>
+                </div>
+                <!-- End Info Item -->
+
+                <div
+                  class="info-item d-flex aos-init"
+                  data-aos="fade-up"
+                  data-aos-delay="400"
+                >
+                  <i class="bi bi-envelope flex-shrink-0"></i>
+                  <div>
+                    <h3>Correo</h3>
+                    <p>info@example.com</p>
+                  </div>
+                </div>
+                <!-- End Info Item -->
+
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.5525553806783!2d1.2413919760278774!3d41.11774537258233!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a15a0ae24b81d5%3A0xb62a7e2bb3ebec1e!2sCarrer%20de%20la%20Pau%2C%2015%2C%2043001%20Tarragona%2C%20Espa%C3%B1a!5e0!3m2!1ses!2ses!4v1696267345152!5m2!1ses!2ses"
+                  frameborder="0"
+                  style="
+                    border: 0px solid #67b0d1;
+                    width: 100%;
+                    height: 270px;
+                    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Sombra completa alrededor */
+                    border-radius: 8px; /* Bordes redondeados (opcional) */
+                  "
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
+            </div>
+
+            <div class="col-lg-7">
+              <form
+                action="forms/contact.php"
+                method="post"
+                class="php-email-form aos-init"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
+                <div class="row gy-4">
+                  <div class="col-md-6">
+                    <label for="name-field" class="pb-2">Nombre:</label>
+                    <input
+                      type="text"
+                      name="name"
+                      id="name-field"
+                      class="form-control"
+                      required=""
+                    />
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="email-field" class="pb-2">Email:</label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      name="email"
+                      id="email-field"
+                      required=""
+                    />
+                  </div>
+
+                  <div class="col-md-12">
+                    <label for="subject-field" class="pb-2">Asunto:</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="subject"
+                      id="subject-field"
+                      required=""
+                    />
+                  </div>
+
+                  <div class="col-md-12">
+                    <label for="message-field" class="pb-2">Mensaje:</label>
+                    <textarea
+                      class="form-control"
+                      name="message"
+                      rows="10"
+                      id="message-field"
+                      required=""
+                    ></textarea>
+                  </div>
+
+                  <div class="col-md-12 text-center">
+                    <div class="loading">Cargando</div>
+                    <div class="error-message"></div>
+                    <div class="sent-message">
+                      Su mensaje ha sido enviado. Gracias!
+                    </div>
+
+                    <button type="submit">Enviar Mensaje</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <!-- End Contact Form -->
+          </div>
+        </div>
+      </section>
+      <!-- /Contact Section -->
+    </main>
+
+    <footer id="footer" class="footer dark-background">
+      <div class="container footer-top">
+        <div class="row gy-4">
+          <div class="col-lg-4 col-md-6 footer-about">
+            <a href="index.html" class="logo d-flex align-items-center">
+              <span class="sitename">EDILSA ÁLVES</span>
+            </a>
+            <div class="footer-contact pt-3">
+              <p>Carrer de la Pau, 15, 43001</p>
+              <p>Tarragona, Espa&ntilde;a</p>
+              <p class="mt-3">
+                <strong>Tel&eacute;fonos:</strong>
+                <span>+34 977 123 456 / +34 612 345 678</span>
+              </p>
+              <p><strong>Email:</strong> <span>edilsa@edilsaalves.com</span></p>
+            </div>
+            <div class="social-links d-flex mt-4">
+              <a href=""><i class="bi bi-twitter-x"></i></a>
+              <a href=""><i class="bi bi-facebook"></i></a>
+              <a href=""><i class="bi bi-instagram"></i></a>
+              <a href=""><i class="bi bi-linkedin"></i></a>
+            </div>
+            <br />
+            <p>Cambio de Idioma del Sitio:</p>
+            <!-- Ubicaci&oacute;n Widget Google Translate, final de Contacto de Redes Sociales) -->
+            <div
+              id="google_translate_element"
+              style="
+                border: 4px solid #cccccc;
+                padding: 0px;
+                border-radius: 10px;
+                margin-left: 0px;
+              "
+            ></div>
+          </div>
+
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4>Enlaces &Uacute;tiles</h4>
+            <ul>
+              <li><a href="#home">Inicio</a></li>
+              <li><a href="#about">Acerca</a></li>
+              <li><a href="#services">Servicios</a></li>
+              <li><a href="#portfolio">Portafolio</a></li>
+              <li><a href="#team">Equipo</a></li>
+              <li><a href="#pricing">Precios</a></li>
+              <li><a href="#faq">FAQs</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4>Nuestros Servicios</h4>
+            <ul>
+              <li><a href="service-details.html#hogar">Hogares</a></li>
+              <li><a href="service-details.html#comercial">Oficinas</a></li>
+              <li><a href="service-details.html#industrial">Industrias</a></li>
+              <li>
+                <a href="service-details.html#institucional">Instituciones</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-12 footer-newsletter">
+            <h4>Nuestro Bolet&iacute;n</h4>
+            <p>
+              Suscr&iacute;bete a nuesto Bolet&iacute;n y recibe las
+              &uacute;ltimas noticias sobre nuestros productos y servicios!
+            </p>
+            <form
+              action="forms/newsletter.php"
+              method="post"
+              class="php-email-form"
+            >
+              <div class="newsletter-form">
+                <input type="email" name="email" /><input
+                  type="submit"
+                  value="Subscr&iacute;bete"
+                />
+              </div>
+              <div class="loading">Cargando</div>
+              <div class="error-message"></div>
+              <div class="sent-message">
+                Su solicitud de suscripci&oacute;n ha sido enviada. Gracias!
               </div>
             </form>
-          </div><!-- End Contact Form -->
-
+          </div>
         </div>
-
       </div>
 
-    </section><!-- /Contact Section -->
-
-  </main>
-
-  <footer id="footer" class="footer dark-background">
-
-    <div class="container footer-top">
-      <div class="row gy-4">
-        <div class="col-lg-4 col-md-6 footer-about">
-          <a href="index.html" class="logo d-flex align-items-center">
-            <span class="sitename">NETiCLAR</span>
+      <div class="container copyright text-center mt-4">
+        <p>
+          &copy; <span>2024 Copyright</span>
+          <strong class="px-1 sitename">EDILSA ÁLVES</strong>
+          <span>Todos los Derechos Reservados</span>
+        </p>
+        <div class="credits">
+          <!-- All the links in the footer should remain intact. -->
+          <!-- You can delete the links only if you've purchased the pro version. -->
+          <!-- Licensing information: https://bootstrapmade.com/license/ -->
+          <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+          Dise&ntilde;ado por
+          <a href="https://www.digitalizacionintegral.com/"
+            >Digitalizaci&oacute;n Integral</a
+          >
+        </div>
+        <br />
+        <!-- Logo -->
+        <div class="d-flex justify-content-center align-items-center">
+          <a
+            href="javascript:void(0);"
+            class="logo"
+            data-bs-toggle="modal"
+            data-bs-target="#logoModal2"
+          >
+            <img
+              src="assets/img/logos/di-logo.png"
+              class="img-fluid custom-logo"
+              alt="Logo Ampliado"
+            />
           </a>
-          <div class="footer-contact pt-3">
-            <p>Carrer de la Pau, 15, 43001</p>
-            <p>Tarragona, España</p>
-            <p class="mt-3"><strong>Teléfonos:</strong> <span>+34 977 123 456 / +34 612 345 678</span></p>
-            <p><strong>Email:</strong> <span>info@neticlar.com</span></p>
-          </div>
-          <div class="social-links d-flex mt-4">
-            <a href=""><i class="bi bi-twitter-x"></i></a>
-            <a href=""><i class="bi bi-facebook"></i></a>
-            <a href=""><i class="bi bi-instagram"></i></a>
-            <a href=""><i class="bi bi-linkedin"></i></a>
-          </div>
         </div>
-
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Enlaces Útiles</h4>
-          <ul>
-            <li><a href="#home">Inicio</a></li>
-            <li><a href="#about">Acerca</a></li>
-            <li><a href="#services">Servicios</a></li>
-            <li><a href="#portfolio">Portafolio</a></li>
-            <li><a href="#team">Equipo</a></li>
-            <li><a href="#pricing">Precios</a></li>
-            <li><a href="#faq">FAQs</a></li>
-          </ul>
+        <br />
+        <!-- Logo KitDigital -->
+        <div class="d-flex justify-content-center align-items-center">
+          <a
+            href="https://www.acelerapyme.gob.es/kit-digital"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="assets/img/logos/KitDigital.png"
+              class="img-fluid"
+              alt="Logo Ampliado"
+              style="cursor: pointer; width: 100%; height: auto"
+            />
+          </a>
         </div>
-
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Nuestros Servicios</h4>
-          <ul>
-            <li><a href="service-details.html#hogar">Hogares</a></li>
-            <li><a href="service-details.html#comercial">Oficinas</a></li>
-            <li><a href="service-details.html#industrial">Industrias</a></li>
-            <li><a href="service-details.html#institucional">Instituciones</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-4 col-md-12 footer-newsletter">
-          <h4>Nuestro Boletín</h4>
-          <p>Suscríbete a nuesto Boletín y recibe las últimas noticias sobre nuestros productos y servicios!</p>
-          <form action="forms/newsletter.php" method="post" class="php-email-form">
-            <div class="newsletter-form"><input type="email" name="email"><input type="submit" value="Subscríbete"></div>
-            <div class="loading">Cargando</div>
-            <div class="error-message"></div>
-            <div class="sent-message">Su solicitud de suscripción ha sido enviada. Gracias!</div>
-          </form>
-        </div>
-
       </div>
-    </div>
+    </footer>
 
-    <div class="container copyright text-center mt-4">
-      <p>© <span>2024 Copyright</span> <strong class="px-1 sitename">NETiCLAR</strong> <span>Todos los Derechos Reservados</span></p>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-        Diseñado por <a href="https://www.digitalizacionintegral.com/">Digitalización Integral</a>
-      </div>
-      <br/>
-      <!-- Logo -->
-      <div class="d-flex justify-content-center align-items-center">
-        <a href="javascript:void(0);" class="logo" data-bs-toggle="modal" data-bs-target="#logoModal2">
-            <img src="assets/img/logos/di-logo.png" class="img-fluid" alt="Logo Ampliado" style="cursor: pointer;" width="20%" height="auto">
-        </a>
-      </div> 
-    </div>
+    <!-- Scroll Top -->
+    <a
+      href="#"
+      id="scroll-top"
+      class="scroll-top d-flex align-items-center justify-content-center active"
+      ><i class="bi bi-arrow-up-short"></i
+    ></a>
 
-  </footer>
+    <!-- Preloader -->
 
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 
-  <!-- Preloader -->
-  <div id="preloader"></div>
+    <!-- Main JS File -->
+    <script src="assets/js/main.js"></script>
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <!-- Script de Google Translate -->
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+          {
+            pageLanguage: "es",
+            includedLanguages: "es,en,fr,de,it,ca,ru",
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+            autoDisplay: false, // Evitar auto-display de la barra
+          },
+          "google_translate_element"
+        );
+      }
+    </script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-  <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
+    <!-- Script para aplicar el idioma seleccionado -->
+    <script>
+      function applyGoogleTranslate(lang) {
+        const iframe = document.querySelector("iframe.goog-te-menu-frame");
+        if (iframe) {
+          const iframeDoc =
+            iframe.contentDocument || iframe.contentWindow.document;
+          const langOptions = iframeDoc.querySelectorAll(
+            ".goog-te-menu2-item span.text"
+          );
+          langOptions.forEach((option) => {
+            if (option.innerText.includes(lang)) {
+              option.click();
+            }
+          });
+        }
+      }
 
-</body>
+      // Guardar el idioma seleccionado
+      function saveLanguage(lang) {
+        localStorage.setItem("selectedLanguage", lang);
+      }
 
+      // Detectar selecci&oacute;n de idioma y guardar en localStorage
+      document.addEventListener("click", (event) => {
+        const iframe = document.querySelector("iframe.goog-te-menu-frame");
+        if (iframe) {
+          const iframeDoc =
+            iframe.contentDocument || iframe.contentWindow.document;
+          const activeLang = iframeDoc.querySelector(
+            ".goog-te-menu2-item-selected span.text"
+          );
+          if (activeLang) {
+            const langText = activeLang.innerText.trim();
+            saveLanguage(langText);
+          }
+        }
+      });
+    </script>
+
+    <!-- Script definitivo para eliminar din&aacute;micamente la barra superior
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const observer = new MutationObserver(() => {
+          const banner = document.querySelector("iframe.goog-te-banner-frame");
+          if (banner) {
+            banner.remove();
+            console.log("Barra de Google Translate eliminada.");
+          }
+          document.body.style.top = "0px"; // Corregir desplazamiento del body
+        });
+
+        observer.observe(document.body, { childList: true, subtree: true });
+      });
+    </script> -->
+
+    <!-- Script definitivo para ocultar la barra de Google Translate -->
+    <script>
+      function removeGoogleBar() {
+        const banner = document.querySelector("iframe.goog-te-banner-frame");
+        const container = document.querySelector(".goog-te-banner-frame");
+
+        if (banner) banner.remove();
+        if (container) container.remove();
+
+        document.body.style.top = "0px"; // Corregir desplazamiento
+        console.log("Barra de Google eliminada.");
+      }
+
+      // Ejecutar en intervalos para asegurar eliminaci&oacute;n
+      const removeBarInterval = setInterval(removeGoogleBar, 300);
+
+      // Detener el intervalo despu&eacute;s de 5 segundos
+      setTimeout(() => {
+        clearInterval(removeBarInterval);
+      }, 5000);
+
+      // Observer para monitorear cambios en el DOM
+      const observer = new MutationObserver(() => {
+        removeGoogleBar();
+      });
+
+      observer.observe(document.body, { childList: true, subtree: true });
+    </script>
+
+    <!-- Script para evitar el desplazamiento de la p&aacute;gina cuando se abre la selecci&oacute;n en el Widget de Google Translator -->
+    <script type="text/javascript">
+      function stopTranslateScroll() {
+        const translateElement = document.getElementById(
+          "google_translate_element"
+        );
+        translateElement.addEventListener("click", function (event) {
+          event.preventDefault();
+        });
+      }
+
+      window.onload = stopTranslateScroll;
+    </script>
+  </body>
 </html>
