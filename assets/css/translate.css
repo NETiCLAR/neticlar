@@ -1,0 +1,96 @@
+.skiptranslate iframe {
+  visibility: hidden !important;
+}
+body {
+  top: 0 !important;
+}
+
+/* Ocultar el banner superior de Google Translate */
+.goog-te-banner-frame.skiptranslate {
+  display: none !important;
+}
+
+/* Asegurar que el sitio no se desplace hacia abajo después de ocultar el banner */
+body {
+  top: 0px !important;
+}
+
+/* Ocultar cualquier imagen o logo de Google en el widget */
+.goog-te-gadget img,
+.goog-logo-frame {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* Contenedor principal del widget */
+#google_translate_element {
+  background-color: #f8f9fa; /* Fondo claro */
+  border-radius: 8px; /* Bordes redondeados */
+  padding: 12px; /* Espaciado interno */
+  font-size: 18px; /* Tamaño base del texto */
+  font-family: "Poppins", sans-serif; /* Fuente moderna */
+  display: inline-block;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+/* Estilo del texto "Seleccionar idioma" */
+.goog-te-gadget {
+  font-family: "Poppins", sans-serif !important; /* Fuente estilizada */
+  font-size: 20px !important; /* Tamaño más grande */
+  color: #395c6a !important; /* Color solicitado */
+  font-weight: 600; /* Texto semi-negrita */
+  text-transform: uppercase; /* Texto en mayúsculas */
+  letter-spacing: 1px; /* Espaciado entre letras */
+}
+
+/* Estilo del selector desplegable */
+.goog-te-combo {
+  background-color: #ffffff; /* Fondo blanco */
+  border: 2px solid #395c6a; /* Borde con el color solicitado */
+  padding: 8px 10px; /* Espaciado interno */
+  font-size: 18px; /* Tamaño del texto en el selector */
+  font-family: "Poppins", sans-serif; /* Fuente estilizada */
+  color: #395c6a; /* Color solicitado */
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra ligera */
+  outline: none; /* Eliminar borde predeterminado */
+  cursor: pointer; /* Mostrar cursor de puntero */
+}
+
+/* Efecto al pasar el mouse sobre el selector */
+.goog-te-combo:hover {
+  background-color: #e6eff1; /* Fondo al pasar el mouse */
+  border-color: #2d4752; /* Borde más oscuro */
+  color: #2d4752; /* Texto más oscuro */
+  transition: all 0.3s ease; /* Suavizar los cambios */
+}
+
+/* Responsividad para pantallas pequeñas */
+@media only screen and (max-width: 600px) {
+  #google_translate_element {
+    font-size: 16px;
+    padding: 8px;
+  }
+
+  .goog-te-combo {
+    font-size: 16px;
+    padding: 6px 8px;
+  }
+
+  .goog-te-gadget {
+    font-size: 18px;
+  }
+}
+
+/* Ocultar la barra superior de Google Translate */
+iframe.goog-te-banner-frame,
+.goog-te-banner-frame {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* Corregir desplazamiento del body */
+body {
+  top: 0px !important;
+  position: relative !important;
+}

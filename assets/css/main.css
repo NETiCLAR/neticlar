@@ -1863,5 +1863,70 @@ html {
 }
 
 /*--------------------------------------------------------------
-# Starter Section Section
+# Logo Digitalización Integral
 --------------------------------------------------------------*/
+
+/* Estilos para el logo */
+.custom-logo {
+  width: 20%; /* Ajuste del tamaño */
+  height: auto;
+  cursor: pointer;
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2),
+    /* Sombra exterior ligera */ 0 6px 20px rgba(0, 0, 0, 0.19); /* Sombra más profunda */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves */
+}
+
+/* Efecto hover para sombra y escala */
+.custom-logo:hover {
+  transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3), 0 12px 24px rgba(0, 0, 0, 0.22); /* Sombra más pronunciada */
+}
+
+/* Para los Textos del Hero */
+
+/* Selecciona específicamente los títulos dentro de la clase hero-title */
+.hero-title h2,
+.hero-title h3,
+.hero-title h4 {
+  font-family: "Poppins", sans-serif; /* Fuente moderna */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para profundidad */
+  color: #ffffff; /* Color para los títulos */
+}
+
+.hero-title h2 {
+  font-size: 3rem; /* Tamaño destacado */
+  font-weight: 700;
+}
+
+.hero-title h3 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.hero-title h4 {
+  font-size: 1.5rem;
+  font-style: italic; /* Mantiene el estilo cursivo */
+  color: #ffffff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* Sombra más ligera */
+}
+
+/* Efectos para el botón dentro de hero-title */
+.hero-title .btn-scroll {
+  color: #ffffff;
+  font-size: 2rem;
+  transition: transform 0.3s ease;
+}
+
+.hero-title .btn-scroll:hover {
+  transform: scale(1.2); /* Efecto de zoom */
+  color: #ffffff;
+}
+
+/* Para agregar sombra a la barra de menú cuando la página hace scroll-down: */
+
+body.scrolled #header {
+  box-shadow: 0 7px 12px rgba(0, 0, 0, 0.2); /* Sombra más intensa */
+  transition: box-shadow 0.3s ease; /* Transición suave */
+}
