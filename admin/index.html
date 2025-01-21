@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edilsa Álves - Panel Administrativo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: #f8f9fa;
+        margin: 0;
+        height: 100vh;
+        overflow: hidden;
+      }
+
+      /* Sidebar */
+      .sidebar {
+        position: fixed;
+        top: 0;
+        left: -250px;
+        width: 250px;
+        height: 100vh;
+        background-color: #395c6a;
+        z-index: 1025;
+        transition: left 0.3s ease;
+        overflow-y: auto;
+        padding: 1rem;
+      }
+
+      .sidebar.show {
+        left: 0;
+      }
+
+      .nav-link {
+        color: rgba(255, 255, 255, 0.8);
+        border-radius: 5px;
+        margin-bottom: 0.5rem;
+        padding: 0.5rem 1rem;
+      }
+
+      .nav-link:hover {
+        color: #fff;
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+
+      .nav-link.active {
+        color: #fff;
+        background-color: #67b0d1 !important;
+      }
+
+      /* Contenido principal */
+      .main-content {
+        margin-left: 0;
+        height: 100vh;
+        overflow: hidden;
+        padding: 0.5rem;
+      }
+
+      .editor-panel,
+      .preview-panel {
+        height: calc(100vh - 4rem);
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 1rem;
+        overflow-y: auto;
+      }
+
+      #preview-frame {
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+
+      /* Menu toggle para móviles */
+      .menu-toggle {
+        position: fixed;
+        top: 1rem;
+        left: 1rem;
+        z-index: 1050;
+        background-color: #395c6a;
+        color: white;
+        border: none;
+        padding: 0.75rem;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 1.5rem;
+        line-height: 1;
+        display: none;
+      }
+
+      /* Responsive */
+      @media (min-width: 992px) {
+        .menu-toggle {
+          display: none;
+        }
+        .sidebar {
+          left: 0;
+        }
+        .main-content {
+          margin-left: 250px;
+        }
+        .main-content .container-fluid {
+          display: flex;
+          gap: 1rem;
+          height: 100vh;
+        }
+        .editor-panel {
+          flex: 1;
+          margin-bottom: 0;
+        }
+        .preview-panel {
+          flex: 1;
+        }
+      }
+
+      @media (max-width: 991.98px) {
+        .menu-toggle {
+          display: block !important;
+        }
+        .main-content {
+          margin-left: 0;
+          padding-top: 4rem;
+        }
+        .main-content .container-fluid {
+          display: block;
+        }
+        .editor-panel {
+          height: 50vh;
+          margin-bottom: 1rem;
+        }
+        .preview-panel {
+          height: calc(50vh - 1rem);
+        }
+        .sidebar {
+          top: 0;
+          height: 100vh;
+        }
+      }
+
+      .sidebar-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1024;
+      }
+
+      .sidebar-overlay.show {
+        display: block;
+      }
+
+      /* Alertas */
+      #alertContainer {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1050;
+        pointer-events: none;
+      }
+
+      .alert {
+        padding: 15px 30px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        margin-bottom: 10px;
+        opacity: 0;
+        transform: translateY(-20px);
+        transition: all 0.3s ease;
+      }
+
+      .alert.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Botón del menú móvil -->
+    <button class="menu-toggle" id="menuToggle">
+      <i class="bi bi-list"></i>
+    </button>
+    <!-- Navbar superior fijo -->
+    <nav class="navbar navbar-dark bg-dark fixed-top d-none">
+      <div class="container-fluid">
+        <span class="navbar-brand">Editor de Contenido</span>
+      </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+      <div class="d-flex flex-column h-100">
+        <div
+          style="display: flex; justify-content: center; align-items: center"
+        >
+          <img src="../assets/img/logos/edilsa-logo.png" style="width: 200px" />
+        </div>
+        <div style="text-align: center">
+          <span class="fs-4 text-white mb-3">Panel de EDICIÓN</span>
+        </div>
+        <p></p>
+        <ul class="nav nav-pills flex-column mb-auto">
+          <li class="nav-item">
+            <a href="#hero" class="nav-link active" data-section="#hero">
+              <i class="bi bi-house-door me-2"></i>
+              Inicio
+            </a>
+          </li>
+          <li>
+            <a href="#about" class="nav-link" data-section="#about">
+              <i class="bi bi-info-circle me-2"></i>
+              Acerca de
+            </a>
+          </li>
+          <li>
+            <a href="#services" class="nav-link" data-section="#services">
+              <i class="bi bi-gear me-2"></i>
+              Servicios
+            </a>
+          </li>
+          <li>
+            <a href="#portfolio" class="nav-link" data-section="#portfolio">
+              <i class="bi bi-collection me-2"></i>
+              Portafolio
+            </a>
+          </li>
+          <li>
+            <a href="#team" class="nav-link" data-section="#team">
+              <i class="bi bi-people me-2"></i>
+              Equipo
+            </a>
+          </li>
+          <li>
+            <a href="#pricing" class="nav-link" data-section="#pricing">
+              <i class="bi bi-tag me-2"></i>
+              Precios
+            </a>
+          </li>
+          <li>
+            <a href="#faq" class="nav-link" data-section="#faq">
+              <i class="bi bi-question-circle me-2"></i>
+              FAQ
+            </a>
+          </li>
+          <li>
+            <a href="#contact" class="nav-link" data-section="#contact">
+              <i class="bi bi-envelope me-2"></i>
+              Contacto
+            </a>
+          </li>
+        </ul>
+        <hr class="text-white" />
+        <a
+          href="#"
+          class="nav-link text-white"
+          onclick="event.preventDefault(); cerrarSesion();"
+        >
+          <i class="bi bi-box-arrow-right me-2"></i>
+          Cerrar Sesión
+        </a>
+      </div>
+    </div>
+
+    <!-- Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Contenido principal -->
+    <div class="main-content">
+      <div class="container-fluid p-0">
+        <!-- Editor -->
+        <div class="editor-panel">
+          <div id="content-editor">
+            <!-- El contenido editable se cargará aquí -->
+          </div>
+        </div>
+
+        <!-- Vista previa -->
+        <div class="preview-panel">
+          <iframe id="preview-frame" src="" frameborder="0"></iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contenedor para las alertas -->
+    <div id="alertContainer"></div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/live-update.js"></script>
+    <script>
+      $(document).ready(function () {
+        // Función para extraer solo texto puro
+        function getCleanText(element) {
+          // Crear un elemento temporal
+          const temp = document.createElement("div");
+          temp.innerHTML = element.innerHTML;
+
+          // Remover todos los elementos HTML pero mantener su texto
+          return temp.textContent || temp.innerText || "";
+        }
+
+        // Función para limpiar el texto y mantener los saltos de línea
+        function cleanText(element) {
+          // Obtener el texto y preservar los saltos de línea
+          let text = "";
+          for (let node of element.childNodes) {
+            if (node.nodeType === 3) {
+              // Nodo de texto
+              text += node.textContent;
+            } else if (node.nodeType === 1) {
+              // Elemento
+              text += node.textContent + "\n";
+            }
+          }
+          // Eliminar espacios extras pero mantener los saltos de línea simples
+          return text.replace(/\s+/g, " ").replace(/\n\s+/g, "\n").trim();
+        }
+
+        // Función para actualizar la vista previa
+        function updatePreview($textarea) {
+          const previewFrame = document.getElementById("preview-frame");
+          const sectionId = $textarea.data("section");
+          const elementData = $textarea.data("element").split("-");
+          const elementType = elementData[0];
+          const elementIndex = parseInt(elementData[1]);
+          const newContent = $textarea.val();
+
+          console.log("Actualizando:", {
+            sectionId: sectionId,
+            elementType: elementType,
+            elementIndex: elementIndex,
+            newContent: newContent,
+          });
+
+          try {
+            // Guardar la posición actual del scroll
+            const scrollPosition = previewFrame.contentWindow.scrollY;
+
+            const frameDocument = previewFrame.contentWindow.document;
+            const section = frameDocument.querySelector(sectionId);
+
+            if (!section) {
+              console.error("Sección no encontrada:", sectionId);
+              return;
+            }
+
+            let elements;
+            if (elementType === "heading") {
+              elements = Array.from(
+                section.querySelectorAll("h1, h2, h3, h4, h5, h6")
+              );
+            } else if (elementType === "paragraph") {
+              elements = Array.from(section.querySelectorAll("p"));
+            } else if (elementType === "list") {
+              elements = Array.from(section.querySelectorAll("li"));
+            }
+
+            if (elements && elements[elementIndex]) {
+              const element = elements[elementIndex];
+
+              // Si es un encabezado con enlace
+              const link = element.querySelector("a");
+              if (elementType === "heading" && link) {
+                link.textContent = newContent;
+              } else {
+                // Preservar elementos internos si existen
+                const children = Array.from(element.childNodes);
+                if (
+                  children.some((node) => node.nodeType === Node.ELEMENT_NODE)
+                ) {
+                  // Si tiene elementos HTML internos, actualizar solo los nodos de texto
+                  children.forEach((node) => {
+                    if (node.nodeType === Node.TEXT_NODE) {
+                      node.textContent = newContent;
+                    }
+                  });
+                } else {
+                  // Si no tiene elementos HTML internos, actualizar directamente
+                  element.textContent = newContent;
+                }
+              }
+
+              // Restaurar la posición del scroll
+              previewFrame.contentWindow.scrollTo(0, scrollPosition);
+            }
+          } catch (error) {
+            console.error("Error al actualizar la vista previa:", error);
+          }
+        }
+
+        // Función para guardar los cambios
+        function saveChanges(sectionId) {
+          const changes = [];
+
+          // Recolectar todos los cambios de la sección
+          $(`textarea[data-section="${sectionId}"]`).each(function () {
+            const $textarea = $(this);
+            changes.push({
+              element: $textarea.data("element"),
+              content: $textarea.val(),
+            });
+          });
+
+          console.log("Guardando cambios:", {
+            section: sectionId,
+            changes: changes,
+          });
+
+          // Guardar la posición actual del scroll antes de enviar los cambios
+          const previewFrame = document.getElementById("preview-frame");
+          const scrollPosition = previewFrame.contentWindow.scrollY;
+
+          // Enviar los cambios al servidor
+          $.ajax({
+            url: "save_changes.php",
+            method: "POST",
+            contentType: "application/x-www-form-urlencoded",
+            data: {
+              section: sectionId,
+              changes: JSON.stringify(changes),
+            },
+            dataType: "json",
+            success: function (response) {
+              console.log("Respuesta del servidor:", response);
+              if (response && response.success) {
+                showAlert("success", "Cambios guardados correctamente");
+
+                // Recargar la vista previa manteniendo la posición
+                const currentSrc = previewFrame.src;
+                const timestamp = new Date().getTime();
+                const newSrc = currentSrc.split("?")[0] + "?t=" + timestamp;
+
+                // Crear un nuevo iframe temporal
+                const tempFrame = document.createElement("iframe");
+                tempFrame.style.display = "none";
+                document.body.appendChild(tempFrame);
+
+                tempFrame.onload = function () {
+                  // Una vez que el iframe temporal está cargado, actualizar el src del iframe principal
+                  previewFrame.src = newSrc;
+                  previewFrame.onload = function () {
+                    // Restaurar la posición del scroll después de que se cargue
+                    previewFrame.contentWindow.scrollTo(0, scrollPosition);
+                    // Eliminar el iframe temporal
+                    document.body.removeChild(tempFrame);
+                  };
+                };
+
+                // Cargar el nuevo contenido en el iframe temporal
+                tempFrame.src = newSrc;
+              } else {
+                showAlert(
+                  "error",
+                  "Error al guardar los cambios: " +
+                    (response && response.message
+                      ? response.message
+                      : "Error desconocido")
+                );
+              }
+            },
+            error: function (xhr, status, error) {
+              console.error("Error en la petición AJAX:", {
+                status: status,
+                error: error,
+                response: xhr.responseText,
+              });
+
+              try {
+                const errorResponse = JSON.parse(xhr.responseText);
+                showAlert(
+                  "error",
+                  "Error al guardar: " + (errorResponse.message || error)
+                );
+              } catch (e) {
+                showAlert(
+                  "error",
+                  "Error al comunicarse con el servidor: " + error
+                );
+              }
+            },
+          });
+        }
+
+        // Función para verificar la sesión al cargar la página
+        function verificarSesion() {
+          return $.ajax({
+            url: "check_session.php",
+            method: "GET",
+            dataType: "json",
+          })
+            .then(function (data) {
+              console.log("Estado de sesión:", data);
+              if (!data.logged_in) {
+                window.location.href = "login.php";
+                return false;
+              }
+              return true;
+            })
+            .catch(function (error) {
+              console.error("Error al verificar sesión:", error);
+              window.location.href = "login.php";
+              return false;
+            });
+        }
+
+        // Función para verificar la sesión antes de guardar cambios
+        function verificarSesionAntesDeGuardar(sectionId) {
+          verificarSesion().then(function (sesionValida) {
+            if (sesionValida) {
+              saveChanges(sectionId);
+            }
+          });
+        }
+
+        // Verificar la sesión al cargar la página y cada 5 minutos
+        verificarSesion();
+        setInterval(verificarSesion, 300000); // 5 minutos
+
+        // Función para mostrar alertas
+        function showAlert(type, message) {
+          const alertContainer = document.getElementById("alertContainer");
+          const alertDiv = document.createElement("div");
+          alertDiv.className = `alert alert-${type}`;
+          alertDiv.textContent = message;
+
+          alertContainer.appendChild(alertDiv);
+
+          // Forzar un reflow para que la animación funcione
+          alertDiv.offsetHeight;
+
+          // Mostrar la alerta con animación
+          alertDiv.classList.add("show");
+
+          // Remover la alerta después de 3 segundos
+          setTimeout(() => {
+            alertDiv.classList.remove("show");
+            setTimeout(() => {
+              alertContainer.removeChild(alertDiv);
+            }, 300); // Esperar a que termine la animación de fade out
+          }, 3000);
+        }
+
+        // Event listeners
+        $(document).ready(function () {
+          // Manejar cambios en tiempo real
+          $(document).on("input", ".content-editor", function () {
+            updatePreview($(this));
+          });
+
+          // Manejar guardado de cambios
+          $(document).on("click", ".save-changes", function () {
+            const sectionId = $(this).data("section");
+            verificarSesionAntesDeGuardar(sectionId);
+          });
+        });
+
+        // Función para cargar el contenido de una sección
+        function loadSectionContent(sectionId) {
+          const previewFrame = document.getElementById("preview-frame");
+
+          // Asegurarse de que el sectionId comience con #
+          const normalizedSectionId = sectionId.startsWith("#")
+            ? sectionId
+            : "#" + sectionId;
+
+          try {
+            // Si el iframe no está cargado o necesita recargarse
+            if (
+              !previewFrame.contentWindow.document.readyState === "complete" ||
+              !previewFrame.contentWindow.document.querySelector(
+                normalizedSectionId
+              )
+            ) {
+              previewFrame.src =
+                "../index.html?nocache=" + new Date().getTime();
+              previewFrame.onload = function () {
+                // Asegurarse de que todo el contenido esté cargado antes de hacer scroll
+                setTimeout(() => {
+                  scrollToSection(normalizedSectionId);
+                  loadEditableContent(normalizedSectionId);
+                }, 200);
+              };
+            } else {
+              scrollToSection(normalizedSectionId);
+              loadEditableContent(normalizedSectionId);
+            }
+          } catch (error) {
+            console.error("Error al acceder al iframe:", error);
+            previewFrame.src = "../index.html?nocache=" + new Date().getTime();
+            previewFrame.onload = function () {
+              setTimeout(() => {
+                scrollToSection(normalizedSectionId);
+                loadEditableContent(normalizedSectionId);
+              }, 200);
+            };
+          }
+        }
+
+        // Función para hacer scroll a una sección
+        function scrollToSection(sectionId) {
+          const previewFrame = document.getElementById("preview-frame");
+          const frameWindow = previewFrame.contentWindow;
+          const frameDocument = frameWindow.document;
+
+          console.log("Scrolling to section:", sectionId);
+
+          try {
+            // Asegurarnos de que el contenido esté completamente cargado
+            if (frameDocument.readyState !== "complete") {
+              previewFrame.onload = function () {
+                const section = frameDocument.querySelector(sectionId);
+                if (section) {
+                  // Esperar un momento para asegurar que todo el contenido esté renderizado
+                  setTimeout(() => {
+                    section.scrollIntoView({
+                      behavior: "smooth",
+                      block: "start",
+                    });
+                  }, 100);
+                }
+              };
+            } else {
+              const section = frameDocument.querySelector(sectionId);
+              if (section) {
+                // Esperar un momento para asegurar que todo el contenido esté renderizado
+                setTimeout(() => {
+                  section.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                  });
+                }, 100);
+              }
+            }
+          } catch (error) {
+            console.error("Error during scroll:", error);
+          }
+        }
+
+        // Función para cargar el contenido editable
+        function loadEditableContent(sectionId) {
+          console.log("Loading editable content for:", sectionId);
+
+          const previewFrame = document.getElementById("preview-frame");
+          const frameDocument = previewFrame.contentWindow.document;
+          const section = frameDocument.querySelector(sectionId);
+
+          if (!section) {
+            console.error("Section not found for editable content:", sectionId);
+            return;
+          }
+
+          // Limpiar el contenido actual del editor
+          $("#content-editor").empty();
+
+          // Crear campos editables para cada elemento de texto
+          const headings = Array.from(
+            section.querySelectorAll("h1, h2, h3, h4, h5, h6")
+          );
+          const paragraphs = Array.from(section.querySelectorAll("p"));
+          const listItems = Array.from(section.querySelectorAll("li"));
+
+          console.log("Elements found:", {
+            headings: headings.length,
+            paragraphs: paragraphs.length,
+            listItems: listItems.length,
+          });
+
+          let editorHtml = '<div class="p-4">';
+          let index = 0;
+
+          // Procesar encabezados
+          headings.forEach((heading, idx) => {
+            // Para la sección de portafolio, mostrar solo los primeros 5 encabezados
+            if (sectionId === "#portfolio" && idx > 4) {
+              return;
+            }
+
+            const cleanedText = cleanText(heading);
+            editorHtml += `
+                        <div class="mb-4">
+                            <label class="form-label text-primary fw-bold fst-italic">ENCABEZADO ${
+                              idx + 1
+                            }:</label>
+                            <textarea class="form-control content-editor"
+                                    data-section="${sectionId}"
+                                    data-element="heading-${idx}"
+                                    rows="2">${cleanedText}</textarea>
+                        </div>`;
+          });
+
+          // Procesar párrafos
+          paragraphs.forEach((paragraph, idx) => {
+            // Para la sección de portafolio, mostrar solo el primer párrafo
+            if (sectionId === "#portfolio" && idx > 0) {
+              return;
+            }
+
+            const cleanedText = cleanText(paragraph);
+            editorHtml += `
+                        <div class="mb-4">
+                            <label class="form-label text-primary fw-bold fst-italic">PÁRRAFO ${
+                              idx + 1
+                            }:</label>
+                            <textarea class="form-control content-editor text-start"
+                                    data-section="${sectionId}"
+                                    data-element="paragraph-${idx}"
+                                    rows="4">${cleanedText}</textarea>
+                        </div>`;
+          });
+
+          // Procesar elementos de lista
+          listItems.forEach((item, idx) => {
+            // Para la sección de portafolio, no mostrar elementos de lista
+            if (sectionId === "#portfolio") {
+              return;
+            }
+
+            const listItem = item.closest("li");
+            const cleanedText = cleanText(listItem);
+            editorHtml += `
+                        <div class="mb-4">
+                            <label class="form-label text-primary fw-bold fst-italic">ELEMENTO DE LISTA ${
+                              idx + 1
+                            }:</label>
+                            <textarea class="form-control content-editor"
+                                    data-section="${sectionId}"
+                                    data-element="list-${idx}"
+                                    rows="2">${cleanedText}</textarea>
+                        </div>`;
+          });
+
+          editorHtml += `
+                    <div class="mt-4">
+                        <button class="btn btn-primary save-changes w-100 btn-lg" data-section="${sectionId}">
+                            <i class="bi bi-save me-2"></i>Guardar Cambios
+                        </button>
+                    </div>
+                </div>`;
+
+          // Insertar el HTML en el editor
+          $("#content-editor").html(editorHtml);
+        }
+
+        // Manejar clics en los enlaces del menú
+        $(".nav-link").click(function (e) {
+          e.preventDefault();
+          $(".nav-link").removeClass("active");
+          $(this).addClass("active");
+          const sectionId = $(this).data("section");
+          if (sectionId) {
+            currentSection = sectionId;
+            loadSectionContent(sectionId.replace("#", ""));
+            // En móviles, ocultar el menú después de seleccionar una sección
+            if (window.innerWidth < 992) {
+              $(".sidebar").removeClass("show");
+              $(".sidebar-overlay").removeClass("show");
+            }
+          }
+        });
+
+        // Variable global para la sección actual
+        let currentSection = "#hero";
+
+        // Cargar la sección hero por defecto
+        loadSectionContent("#hero");
+
+        function debounce(func, wait) {
+          let timeout;
+          return function executedFunction(...args) {
+            const later = () => {
+              clearTimeout(timeout);
+              func(...args);
+            };
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+          };
+        }
+      });
+
+      // Verificar la sesión al cargar la página
+      function verificarSesion() {
+        return $.ajax({
+          url: "check_session.php",
+          method: "GET",
+          dataType: "json",
+        })
+          .then(function (data) {
+            console.log("Estado de sesión:", data);
+            if (!data.logged_in) {
+              window.location.href = "login.php";
+              return false;
+            }
+            return true;
+          })
+          .catch(function (error) {
+            console.error("Error al verificar sesión:", error);
+            window.location.href = "login.php";
+            return false;
+          });
+      }
+
+      // Verificar la sesión antes de guardar cambios
+      function verificarSesionAntesDeGuardar(sectionId) {
+        verificarSesion().then(function (sesionValida) {
+          if (sesionValida) {
+            saveChanges(sectionId);
+          }
+        });
+      }
+
+      // Verificar la sesión al cargar la página y cada 5 minutos
+      verificarSesion();
+      setInterval(verificarSesion, 300000); // 5 minutos
+
+      function cerrarSesion() {
+        // Hacer la petición a logout.php
+        fetch("logout.php")
+          .then((response) => {
+            // Cerrar el modal del dashboard desde el iframe
+            try {
+              const dashboardModal =
+                window.parent.document.getElementById("dashboardModal");
+              const modal =
+                window.parent.bootstrap.Modal.getInstance(dashboardModal);
+              if (modal) {
+                modal.hide();
+              }
+              // Recargar la página padre
+              window.parent.location.reload();
+            } catch (error) {
+              console.error("Error al cerrar modal:", error);
+            }
+          })
+          .catch((error) => {
+            console.error("Error en fetch:", error);
+            // En caso de error, intentar cerrar el modal y recargar
+            try {
+              const dashboardModal =
+                window.parent.document.getElementById("dashboardModal");
+              const modal =
+                window.parent.bootstrap.Modal.getInstance(dashboardModal);
+              if (modal) {
+                modal.hide();
+              }
+              window.parent.location.reload();
+            } catch (error) {
+              console.error("Error al cerrar modal:", error);
+            }
+          });
+      }
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Función para alternar el menú lateral
+        function toggleSidebar() {
+          const sidebar = document.getElementById("sidebar");
+          const overlay = document.querySelector(".sidebar-overlay");
+
+          sidebar.classList.toggle("show");
+          overlay.classList.toggle("show");
+        }
+
+        // Event listeners para el menú móvil
+        const menuToggle = document.getElementById("menuToggle");
+        const overlay = document.querySelector(".sidebar-overlay");
+
+        if (menuToggle) {
+          menuToggle.addEventListener("click", function (e) {
+            e.preventDefault();
+            toggleSidebar();
+          });
+        }
+
+        if (overlay) {
+          overlay.addEventListener("click", toggleSidebar);
+        }
+
+        // Cerrar el menú cuando se hace clic en un enlace (solo en móviles)
+        document.querySelectorAll(".sidebar .nav-link").forEach((link) => {
+          link.addEventListener("click", function () {
+            if (window.innerWidth < 992) {
+              toggleSidebar();
+            }
+          });
+        });
+
+        // Ajustar la altura del editor según el contenido
+        function adjustEditorHeight() {
+          const contentEditor = document.getElementById("content-editor");
+          if (contentEditor) {
+            const textareas = contentEditor.querySelectorAll("textarea");
+            textareas.forEach((textarea) => {
+              textarea.style.height = "auto";
+              textarea.style.height = textarea.scrollHeight + "px";
+            });
+          }
+        }
+
+        // Observar cambios en el content-editor
+        const observer = new MutationObserver(adjustEditorHeight);
+        const contentEditor = document.getElementById("content-editor");
+        if (contentEditor) {
+          observer.observe(contentEditor, {
+            childList: true,
+            subtree: true,
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
